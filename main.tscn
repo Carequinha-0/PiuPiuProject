@@ -1,5 +1,9 @@
-[gd_scene format=3 uid="uid://dftslhbe1n0sb"]
+[gd_scene load_steps=2 format=3 uid="uid://dftslhbe1n0sb"]
+
+[ext_resource type="PackedScene" uid="uid://d4j51hy41cpjv" path="res://Components/Entities/Player/player.tscn" id="1_cryxy"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_cryxy")]
