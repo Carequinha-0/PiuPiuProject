@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cptuqqvay20hn"]
+[gd_scene load_steps=5 format=3 uid="uid://cptuqqvay20hn"]
 
 [ext_resource type="FontFile" uid="uid://boq0u6gq5dnq8" path="res://Components/Fonte/PixelTakhisis-ZajJ.ttf" id="1_vg25v"]
 [ext_resource type="Script" path="res://MainMenu.cs" id="1_ydrgn"]
 [ext_resource type="Script" path="res://CameraMenu.cs" id="2_hmt41"]
+[ext_resource type="Script" path="res://Confirmation.cs" id="4_yxb48"]
 
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_ydrgn")
@@ -29,6 +30,21 @@ text = "Quit
 [node name="Camera" type="Camera2D" parent="."]
 script = ExtResource("2_hmt41")
 
+[node name="Confirmation" type="Window" parent="."]
+title = "Are you sure you want to Quit?"
+initial_position = 1
+size = Vector2i(300, 150)
+script = ExtResource("4_yxb48")
+
+[node name="Yes" type="Button" parent="Confirmation"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="No" type="Button" parent="Confirmation"]
+offset_right = 8.0
+offset_bottom = 8.0
+
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Play" to="Camera" method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="close_requested" from="Confirmation" to="." method="_on_confirmation_close_requested"]
