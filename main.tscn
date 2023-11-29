@@ -5,5 +5,6 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.995, 1.995)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_cryxy")]
