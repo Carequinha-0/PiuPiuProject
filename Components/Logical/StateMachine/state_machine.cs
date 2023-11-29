@@ -13,7 +13,6 @@ public class StateMachine
     }
 
     public void ChangeState(State new_state) {
-        GD.Print(new_state);
         active_state._ExitState();
         active_state = new_state;
         active_state._EnterState();
