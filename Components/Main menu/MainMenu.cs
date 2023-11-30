@@ -22,8 +22,16 @@ public partial class MainMenu : Node2D
 	public void _on_confirmation_close_requested() {
 		GetNode<Window>("Confirmation").Hide();
 	}
-
+	private void _on_yes_pressed()
+	{
+		GetTree().Quit();
+	}
+	private void _on_no_pressed()
+	{
+		GetNode<Window>("Confirmation").Hide();
+	}
 }
+
 
 
 

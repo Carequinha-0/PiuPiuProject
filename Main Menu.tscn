@@ -1,12 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cptuqqvay20hn"]
+[gd_scene load_steps=5 format=3 uid="uid://cim3xruqp1olw"]
 
+[ext_resource type="Script" path="res://Components/Main menu/MainMenu.cs" id="1_1d4wi"]
 [ext_resource type="FontFile" uid="uid://boq0u6gq5dnq8" path="res://Components/Fonte/PixelTakhisis-ZajJ.ttf" id="1_vg25v"]
-[ext_resource type="Script" path="res://MainMenu.cs" id="1_ydrgn"]
 [ext_resource type="Script" path="res://CameraMenu.cs" id="2_hmt41"]
 [ext_resource type="Script" path="res://Confirmation.cs" id="4_yxb48"]
 
 [node name="Main Menu" type="Node2D"]
-script = ExtResource("1_ydrgn")
+script = ExtResource("1_1d4wi")
 
 [node name="Play" type="Button" parent="."]
 offset_left = -200.0
@@ -34,17 +34,30 @@ script = ExtResource("2_hmt41")
 title = "Are you sure you want to Quit?"
 initial_position = 1
 size = Vector2i(300, 150)
+visible = false
+unresizable = true
+popup_window = true
 script = ExtResource("4_yxb48")
 
 [node name="Yes" type="Button" parent="Confirmation"]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 75.0
+offset_top = 50.0
+offset_right = 110.0
+offset_bottom = 81.0
+text = "Yes
+"
 
 [node name="No" type="Button" parent="Confirmation"]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 200.0
+offset_top = 50.0
+offset_right = 231.0
+offset_bottom = 81.0
+text = "No
+"
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Play" to="Camera" method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="close_requested" from="Confirmation" to="." method="_on_confirmation_close_requested"]
+[connection signal="pressed" from="Confirmation/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="Confirmation/No" to="." method="_on_no_pressed"]
