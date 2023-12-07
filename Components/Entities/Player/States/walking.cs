@@ -38,6 +38,10 @@ public partial class PlayerWalkingState : State
         AnimationPlayer animationPlayer = this.parent_node.GetNode<AnimationPlayer>("./AnimationPlayer");
         animationPlayer.CurrentAnimation = GetAnimationNameBySpeed(speed_vector);
 
+        if (Input.IsActionJustPressed("dash")) {
+            return new PlayerDashState(parent_node);
+        }
+
         return null;
     }
 
