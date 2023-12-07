@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 public partial class PlayerWalkingState : State
 {
@@ -23,7 +24,6 @@ public partial class PlayerWalkingState : State
         y_strength = Input.GetActionStrength("move_down") - Input.GetActionStrength("move_up");
     }
     
-
     override public State _process_state(double delta) {
         Vector2 speed_vector = new Vector2
         {
@@ -37,8 +37,7 @@ public partial class PlayerWalkingState : State
 
         AnimationPlayer animationPlayer = this.parent_node.GetNode<AnimationPlayer>("./AnimationPlayer");
         animationPlayer.CurrentAnimation = GetAnimationNameBySpeed(speed_vector);
-
-        if (Input.IsActionJustPressed("dash")) {
+        if (Input.IsActionJustPressed("dash") && parent_node.dashCurrentCooldown == 0) {
             return new PlayerDashState(parent_node);
         }
 

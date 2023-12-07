@@ -7,6 +7,9 @@ public partial class player : CharacterBody2D
 	public float SPEED = 200f;
 	public Vector2 player_movement_velocity = Vector2.Zero;
 
+	public float dashCooldown = 1;
+	public float dashCurrentCooldown = 0;
+
 	public enum PlayerStates {
 		Idle,
 		WalkingUp,
@@ -40,6 +43,12 @@ public partial class player : CharacterBody2D
 		stateMachine.Physics_Process(delta);
 		Vector2 final_velocity = Vector2.Zero;
 		final_velocity += player_movement_velocity;
+
+	
+		dashCurrentCooldown -= (float)delta;
+		if (dashCurrentCooldown < 0) {
+			dashCurrentCooldown=0;
+		}
 
 		Velocity = final_velocity;
 
