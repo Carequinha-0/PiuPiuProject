@@ -36,6 +36,8 @@ public class PlayerIdleState : State
         };
         if(speed_vector != Vector2.Zero)
             return new PlayerWalkingState(parent_node);
+
+        
         return null;
     }
 
