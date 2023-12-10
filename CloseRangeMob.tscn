@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7v3pgibvhy11"]
+
+[ext_resource type="Script" path="res://Components/Entities/Mobs/CloseRangeMob.cs" id="1_6w8yb"]
+[ext_resource type="Texture2D" uid="uid://j7n807vmw8uy" path="res://Assets/Entities/Mob/Zombie.png" id="1_t65rv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccrm2"]
+atlas = ExtResource("1_t65rv")
+region = Rect2(0, 0, 29, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7m3dh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccrm2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7au6c"]
+radius = 18.0
+
+[node name="CloseRangeMob" type="CharacterBody2D"]
+script = ExtResource("1_6w8yb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7m3dh")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_7au6c")
