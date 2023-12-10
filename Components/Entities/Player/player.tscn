@@ -230,7 +230,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iwlpl"]
 size = Vector2(40, 60)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_6rblb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -242,7 +242,7 @@ position_smoothing_speed = 4.305
 position = Vector2(3.8147e-06, -3.8147e-06)
 scale = Vector2(2.0625, 2.0625)
 sprite_frames = SubResource("SpriteFrames_ne7jo")
-animation = &"running_right"
+animation = &"idle"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

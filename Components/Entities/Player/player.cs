@@ -13,16 +13,16 @@ public partial class player : CharacterBody2D
 	public float dashCooldown = 1;
 	public float dashCurrentCooldown = 0;
 
-    public override void _Ready()
-    {
+	public override void _Ready()
+	{
 		this.health = new Health(100, OnDeath);
 		Area2D hitbox = GetNode<Area2D>("./Hitbox");
 		this.damage_receiver = new DamageReceiver(ref health, ref hitbox);
 		var defaultstate = new PlayerIdleState(this);
 		stateMachine = new StateMachine(defaultstate);
-        base._Ready();
-    }
-    public override void _Process(double delta)
+		base._Ready();
+	}
+	public override void _Process(double delta)
 	{
 		stateMachine.Input_Process();
 		stateMachine.Process(delta);

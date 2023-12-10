@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cim3xruqp1olw"]
+[gd_scene load_steps=3 format=3 uid="uid://cim3xruqp1olw"]
 
 [ext_resource type="Script" path="res://Components/Main menu/MainMenu.cs" id="1_1d4wi"]
 [ext_resource type="FontFile" uid="uid://boq0u6gq5dnq8" path="res://Components/Fonte/PixelTakhisis-ZajJ.ttf" id="1_vg25v"]
-[ext_resource type="Script" path="res://CameraMenu.cs" id="2_hmt41"]
-[ext_resource type="Script" path="res://Confirmation.cs" id="4_yxb48"]
 
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_1d4wi")
@@ -28,7 +26,6 @@ text = "Quit
 "
 
 [node name="Camera" type="Camera2D" parent="."]
-script = ExtResource("2_hmt41")
 
 [node name="Confirmation" type="Window" parent="."]
 title = "Are you sure you want to Quit?"
@@ -37,7 +34,6 @@ size = Vector2i(300, 150)
 visible = false
 unresizable = true
 popup_window = true
-script = ExtResource("4_yxb48")
 
 [node name="Yes" type="Button" parent="Confirmation"]
 offset_left = 75.0
