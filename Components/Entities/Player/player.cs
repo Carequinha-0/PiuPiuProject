@@ -17,7 +17,7 @@ public partial class player : CharacterBody2D
 	{
 		this.health = new Health(100, OnDeath);
 		Area2D hitbox = GetNode<Area2D>("./Hitbox");
-		this.damage_receiver = new DamageReceiver(ref health, ref hitbox);
+		this.damage_receiver = new DamageReceiver(ref health, ref hitbox, 1f);
 		var defaultstate = new PlayerIdleState(this);
 		stateMachine = new StateMachine(defaultstate);
 		base._Ready();
@@ -26,7 +26,7 @@ public partial class player : CharacterBody2D
 	{
 		stateMachine.Input_Process();
 		stateMachine.Process(delta);
-		damage_receiver.ApplyCollidingDamage();
+		damage_receiver.ApplyCollidingDamage((float)delta);
 	}
 
 	public override void _PhysicsProcess(double delta)

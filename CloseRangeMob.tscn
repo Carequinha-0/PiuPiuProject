@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7v3pgibvhy11"]
+[gd_scene load_steps=7 format=3 uid="uid://b7v3pgibvhy11"]
 
 [ext_resource type="Script" path="res://Components/Entities/Mobs/CloseRangeMob.cs" id="1_6w8yb"]
 [ext_resource type="Texture2D" uid="uid://j7n807vmw8uy" path="res://Assets/Entities/Mob/Zombie.png" id="1_t65rv"]
+[ext_resource type="Script" path="res://Components/Entities/Mobs/CloseRangeMobHitbox.cs" id="3_644ck"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ccrm2"]
 atlas = ExtResource("1_t65rv")
@@ -28,6 +29,7 @@ script = ExtResource("1_6w8yb")
 sprite_frames = SubResource("SpriteFrames_7m3dh")
 
 [node name="Hitbox" type="Area2D" parent="."]
+script = ExtResource("3_644ck")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_7au6c")
