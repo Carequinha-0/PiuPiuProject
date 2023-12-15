@@ -15,7 +15,7 @@ public partial class CloseRangeMob : CharacterBody2D
 		//Vetores posição
 		Vector2 velocity = Velocity; 
 		Vector2 mobPosition = this.Position;		
-		Vector2 playerPosition = GetNode<CharacterBody2D>("../CharacterBody2D").Position;
+		Vector2 playerPosition = GetNode<CharacterBody2D>("../Player").Position;
 		
 		targetPosition = (playerPosition - mobPosition).Normalized();
 		velocity = Vector2.Zero;

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7v3pgibvhy11"]
+[gd_scene load_steps=6 format=3 uid="uid://dcokuy1182qdl"]
 
 [ext_resource type="Script" path="res://Components/Entities/Mobs/CloseRangeMob.cs" id="1_6w8yb"]
 [ext_resource type="Texture2D" uid="uid://j7n807vmw8uy" path="res://Assets/Entities/Mob/Zombie.png" id="1_t65rv"]
