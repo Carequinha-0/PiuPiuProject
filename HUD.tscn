@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b373f6l5a1ged"]
+
+[ext_resource type="Script" path="res://Components/UI/HealthBar.cs" id="1_rcy2o"]
+
+[node name="HUD" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 57.0
+offset_top = 44.0
+offset_right = 184.0
+offset_bottom = 71.0
+script = ExtResource("1_rcy2o")

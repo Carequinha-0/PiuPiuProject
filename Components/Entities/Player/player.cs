@@ -50,5 +50,6 @@ public partial class player : CharacterBody2D
 	public void OnDeath()
 	{
 		GD.Print("Player died");
+		
 	}
 }
