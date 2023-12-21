@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccscm6lgcdwj"]
+
+[ext_resource type="Script" path="res://Components/Entities/Objects/Torch/Torch.cs" id="1_6mrht"]
+[ext_resource type="Texture2D" uid="uid://wmssjsvnyd08" path="res://Assets/Tilesets/dungeon_tileset_1.png" id="1_8wts3"]
+[ext_resource type="Texture2D" uid="uid://bxsyfn77tr1pq" path="res://Assets/Light/spotlight_1.png" id="2_dnmws"]
+[ext_resource type="FontFile" uid="uid://boq0u6gq5dnq8" path="res://Components/Fonte/PixelTakhisis-ZajJ.ttf" id="3_fjmck"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kjlul"]
+font = ExtResource("3_fjmck")
+font_size = 10
+
+[node name="Torch" type="Node2D"]
+scale = Vector2(1.205, 1.205)
+script = ExtResource("1_6mrht")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8wts3")
+hframes = 15
+vframes = 15
+frame = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1.52588e-05, -1)
+scale = Vector2(9.33984, 11.5)
+color = Color(1, 0.694118, 0.207843, 1)
+energy = 0.4
+texture = ExtResource("2_dnmws")
+texture_scale = 0.1
+
+[node name="InteractionText" type="Label" parent="."]
+visible = false
+offset_left = -26.556
+offset_top = -19.917
+offset_right = 26.444
+offset_bottom = -3.91701
+text = "Press E"
+label_settings = SubResource("LabelSettings_kjlul")

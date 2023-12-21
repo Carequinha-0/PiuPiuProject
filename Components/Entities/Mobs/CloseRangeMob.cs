@@ -14,7 +14,9 @@ public partial class CloseRangeMob : CharacterBody2D
 		//Vetores posição
 		Vector2 velocity = Velocity; 
 		Vector2 mobPosition = this.Position;		
-		Vector2 playerPosition = GetNode<CharacterBody2D>("../CharacterBody2D").Position;
+		Vector2 playerPosition = GetNode<CharacterBody2D>("../Player").Position;
+
+		Health health = new Health(20, onDeath);
 		
 		targetPosition = (playerPosition - mobPosition).Normalized();
 		velocity = Vector2.Zero;
@@ -22,10 +24,12 @@ public partial class CloseRangeMob : CharacterBody2D
 			velocity = targetPosition;
 		}
 		velocity = velocity * Speed;
-		Velocity = velocity;	
+		Velocity = velocity;
 		MoveAndSlide();
+	}
 
-
+	public void onDeath() {
+		this.QueueFree(); // Deletes the Node
 	}
 	
 }
