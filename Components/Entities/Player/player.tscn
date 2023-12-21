@@ -231,6 +231,7 @@ _data = {
 size = Vector2(40, 60)
 
 [node name="Player" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_6rblb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
