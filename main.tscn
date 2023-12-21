@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://wmssjsvnyd08" path="res://Assets/Tilesets/dungeon_tileset_1.png" id="1_nj6s4"]
 [ext_resource type="Texture2D" uid="uid://dt35l0sraussl" path="res://Assets/Tilesets/tf_dd_B_2.png" id="2_r5w6s"]
 [ext_resource type="Texture2D" uid="uid://jr6621f2rk5f" path="res://Assets/Tilesets/dungeon_1_tileset.png" id="3_vrkcq"]
-[ext_resource type="PackedScene" uid="uid://dcokuy1182qdl" path="res://CloseRangeMob.tscn" id="6_mba5x"]
+[ext_resource type="PackedScene" uid="uid://b7v3pgibvhy11" path="res://CloseRangeMob.tscn" id="6_mba5x"]
 [ext_resource type="PackedScene" uid="uid://ccscm6lgcdwj" path="res://Components/Entities/Objects/Torch/Torch.tscn" id="6_qcn77"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fm6m1"]
