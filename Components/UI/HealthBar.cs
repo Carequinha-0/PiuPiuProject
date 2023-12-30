@@ -8,7 +8,7 @@ public partial class HealthBar : ProgressBar
 	player playerNode;
 	public override void _Ready()
 	{
-		this.playerNode = this.GetNode<player>("../../../CharacterBody2D");
+		this.playerNode = this.GetNode<player>("../../../Player");
 	}
 
 	public override void _Process(double delta)

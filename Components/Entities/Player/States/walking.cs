@@ -40,6 +40,9 @@ public partial class PlayerWalkingState : State
         if (Input.IsActionJustPressed("dash") && parent_node.dashCurrentCooldown == 0) {
             return new PlayerDashState(parent_node);
         }
+        if (Input.IsActionJustPressed("slashAttack") ) {
+            return new PlayerSlashState(parent_node);
+        }
 
         return null;
     }
