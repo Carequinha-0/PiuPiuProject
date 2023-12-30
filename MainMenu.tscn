@@ -1,17 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://cim3xruqp1olw"]
 
-[ext_resource type="Script" path="res://Components/Main menu/MainMenu.cs" id="1_1d4wi"]
-[ext_resource type="FontFile" uid="uid://boq0u6gq5dnq8" path="res://Components/Fonte/PixelTakhisis-ZajJ.ttf" id="1_vg25v"]
+[ext_resource type="Script" path="res://Components/Main menu/MainMenu.cs" id="1_rn6ed"]
+[ext_resource type="FontFile" uid="uid://boq0u6gq5dnq8" path="res://Components/Fonte/PixelTakhisis-ZajJ.ttf" id="2_mrkq8"]
 
 [node name="Main Menu" type="Node2D"]
-script = ExtResource("1_1d4wi")
+script = ExtResource("1_rn6ed")
 
 [node name="Play" type="Button" parent="."]
 offset_left = -200.0
 offset_top = -221.0
 offset_right = 200.0
 offset_bottom = -21.0
-theme_override_fonts/font = ExtResource("1_vg25v")
+theme_override_fonts/font = ExtResource("2_mrkq8")
 theme_override_font_sizes/font_size = 60
 text = "Play"
 
@@ -20,7 +20,7 @@ offset_left = -200.0
 offset_top = 21.0
 offset_right = 200.0
 offset_bottom = 221.0
-theme_override_fonts/font = ExtResource("1_vg25v")
+theme_override_fonts/font = ExtResource("2_mrkq8")
 theme_override_font_sizes/font_size = 60
 text = "Quit
 "

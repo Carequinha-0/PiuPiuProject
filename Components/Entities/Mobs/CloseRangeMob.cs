@@ -8,15 +8,21 @@ public partial class CloseRangeMob : CharacterBody2D
 	public const float Speed = 100.0f;
 	Vector2 mobPosition = Vector2.Zero;
 	Vector2 targetPosition = Vector2.Zero;
-	Vector2 playerPosition;		
+	Vector2 playerPosition;	
+	public Health health;
+	public DamageReceiver damage_receiver{ get; set; }
+	public override void _Ready()
+	{
+		this.health = new Health(10, onDeath);
+		Area2D hitbox = GetNode<Area2D>("./Hitbox");
+		this.damage_receiver = new DamageReceiver(ref health, ref hitbox, 0.1f);
+	}
 	public override void _PhysicsProcess(double delta)
 	{
 		//Vetores posição
 		Vector2 velocity = Velocity; 
 		Vector2 mobPosition = this.Position;		
 		Vector2 playerPosition = GetNode<CharacterBody2D>("../Player").Position;
-
-		Health health = new Health(20, onDeath);
 		
 		targetPosition = (playerPosition - mobPosition).Normalized();
 		velocity = Vector2.Zero;
@@ -27,8 +33,12 @@ public partial class CloseRangeMob : CharacterBody2D
 		Velocity = velocity;
 		MoveAndSlide();
 	}
+	public override void _Process(double delta)
+	{
+		damage_receiver.ApplyCollidingDamage((float)delta);
+	}
 
-	public void onDeath() {
+		public void onDeath() {
 		this.QueueFree(); // Deletes the Node
 	}
 	

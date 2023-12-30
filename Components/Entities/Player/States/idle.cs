@@ -34,9 +34,12 @@ public class PlayerIdleState : State
             X = x_strength,
             Y = y_strength
         };
-        if(speed_vector != Vector2.Zero)
-            return new PlayerWalkingState(parent_node);
+        if(speed_vector != Vector2.Zero) {
+            return new PlayerWalkingState(parent_node);}
 
+        if (Input.IsActionJustPressed("slashAttack")) {
+            return new PlayerSlashState(parent_node);
+        }
         
         return null;
     }
