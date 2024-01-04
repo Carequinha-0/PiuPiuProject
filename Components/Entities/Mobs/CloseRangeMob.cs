@@ -13,9 +13,9 @@ public partial class CloseRangeMob : CharacterBody2D
 	public DamageReceiver damage_receiver{ get; set; }
 	public override void _Ready()
 	{
-		this.health = new Health(10, onDeath);
+		this.health = new Health(40, onDeath);
 		Area2D hitbox = GetNode<Area2D>("./Hitbox");
-		this.damage_receiver = new DamageReceiver(ref health, ref hitbox, 0.1f);
+		this.damage_receiver = new DamageReceiver(ref health, ref hitbox, 0.5f);
 	}
 	public override void _PhysicsProcess(double delta)
 	{
