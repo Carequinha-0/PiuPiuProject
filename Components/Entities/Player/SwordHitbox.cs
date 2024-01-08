@@ -8,4 +8,7 @@ public partial class SwordHitbox : DamageSource
 	{
 		this.damage = 20;
 	}
+	public override void OnDamageDealt()
+	{
+	}
 }

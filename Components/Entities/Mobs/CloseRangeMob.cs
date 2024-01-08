@@ -1,6 +1,5 @@
 using Godot;
 using System;
-using System.Security.Cryptography.X509Certificates;
 
 public partial class CloseRangeMob : CharacterBody2D
 {
@@ -36,7 +35,7 @@ public partial class CloseRangeMob : CharacterBody2D
 	}
 	public override void _Process(double delta)
 	{
-		damage_receiver.ApplyCollidingDamage((float)delta);
+		damageReceiver.ApplyCollidingDamage((float) delta);
 	}
 
 		public void onDeath() {
