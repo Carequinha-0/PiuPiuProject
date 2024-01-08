@@ -41,6 +41,9 @@ public class PlayerIdleState : State
             return new PlayerShootingState(parent_node);
         }
 
+        if (Input.IsActionJustPressed("slashAttack")) {
+            return new PlayerSlashState(parent_node);
+        }
         
         return null;
     }
