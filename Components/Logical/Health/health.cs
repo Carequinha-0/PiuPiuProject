@@ -16,7 +16,6 @@ public class Health
 
     public void TakeDamage(float damage) {
         current_health -= damage;
-        GD.Print("Health: " + current_health);
         if (current_health <= 0) {
             OnDeath();
         }

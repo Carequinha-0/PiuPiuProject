@@ -5,9 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dt35l0sraussl" path="res://Assets/Tilesets/tf_dd_B_2.png" id="2_r5w6s"]
 [ext_resource type="Texture2D" uid="uid://jr6621f2rk5f" path="res://Assets/Tilesets/dungeon_1_tileset.png" id="3_vrkcq"]
 [ext_resource type="PackedScene" uid="uid://b7v3pgibvhy11" path="res://CloseRangeMob.tscn" id="6_mba5x"]
-[ext_resource type="PackedScene" uid="uid://b373f6l5a1ged" path="res://HUD.tscn" id="7_jxt5l"]
-
 [ext_resource type="PackedScene" uid="uid://ccscm6lgcdwj" path="res://Components/Entities/Objects/Torch/Torch.tscn" id="6_qcn77"]
+[ext_resource type="PackedScene" uid="uid://b373f6l5a1ged" path="res://HUD.tscn" id="7_jxt5l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fm6m1"]
 texture = ExtResource("1_nj6s4")
@@ -332,13 +331,21 @@ layer_1/tile_data = PackedInt32Array(-262154, 65538, 0, -262153, 65538, 0, -2621
 layer_2/tile_data = PackedInt32Array()
 
 [node name="Player" parent="." instance=ExtResource("1_cryxy")]
+position = Vector2(99, 1)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.505882, 0.505882, 0.505882, 1)
 
+[node name="CloseRangeMob3" parent="." instance=ExtResource("6_mba5x")]
+position = Vector2(-356, -45)
+
+[node name="CloseRangeMob2" parent="." instance=ExtResource("6_mba5x")]
+position = Vector2(-398, 33)
+
 [node name="CloseRangeMob" parent="." instance=ExtResource("6_mba5x")]
-position = Vector2(-202, 41)
+position = Vector2(-339, 22)
 
 [node name="HUD" parent="." instance=ExtResource("7_jxt5l")]
+
 [node name="Torch" parent="." instance=ExtResource("6_qcn77")]
 position = Vector2(-1, -202)

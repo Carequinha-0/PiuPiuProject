@@ -36,6 +36,10 @@ public class PlayerIdleState : State
         };
         if(speed_vector != Vector2.Zero)
             return new PlayerWalkingState(parent_node);
+        
+        if(Input.IsActionJustPressed("shoot") && parent_node.normalShotCurrentCooldown == 0) {
+            return new PlayerShootingState(parent_node);
+        }
 
         
         return null;

@@ -11,6 +11,7 @@ public class DamageReceiver
         this.health = health;
         this.hitbox = hitbox;
         this.damage_cooldown = damage_cooldown;
+        timePassed = damage_cooldown;
     }
     public void ApplyCollidingDamage(float delta) {
         var bodies = hitbox.GetOverlappingAreas();
@@ -20,6 +21,7 @@ public class DamageReceiver
             if (body != null) {
                 if (timePassed >= damage_cooldown) {
                     health.TakeDamage(body_dealer.damage);
+                    body_dealer.OnDamageDealt();
                     timePassed = 0;
                 }
             }
