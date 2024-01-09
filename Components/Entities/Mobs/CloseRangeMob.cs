@@ -25,7 +25,7 @@ public partial class CloseRangeMob : CharacterBody2D
 		Vector2 playerPosition = GetNode<CharacterBody2D>("../Player").Position;
 		targetPosition = (playerPosition - mobPosition).Normalized();
 		velocity = Vector2.Zero;
-		if (mobPosition.DistanceTo(playerPosition) < 200) {
+		if (mobPosition.DistanceTo(playerPosition) < 10000) {
 			velocity = targetPosition;
 		}
 		velocity = velocity * Speed;
