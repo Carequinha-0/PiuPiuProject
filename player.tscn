@@ -228,8 +228,8 @@ _data = {
 "running_up": SubResource("Animation_norib")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwlpl"]
-size = Vector2(37, 60)
+[sub_resource type="CircleShape2D" id="CircleShape2D_vqanx"]
+radius = 24.0
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
@@ -265,7 +265,7 @@ texture_scale = 0.3
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("RectangleShape2D_iwlpl")
+shape = SubResource("CircleShape2D_vqanx")
 debug_color = Color(0, 0.635294, 0.4, 0.419608)
 
 [node name="Weapon" type="Node2D" parent="."]
