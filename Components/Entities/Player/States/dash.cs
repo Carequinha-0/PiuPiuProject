@@ -21,7 +21,8 @@ public class PlayerDashState : State
         AnimationPlayer animationPlayer = this.parent_node.GetNode<AnimationPlayer>("./AnimationPlayer");
         //animationPlayer.CurrentAnimation = "idle";      Dash animation
         parent_node.player_movement_velocity *= 3;
-        originalPlayerVelocity = new Vector2(parent_node.player_movement_velocity.X,parent_node.player_movement_velocity.Y);        
+        originalPlayerVelocity = new Vector2(parent_node.player_movement_velocity.X,parent_node.player_movement_velocity.Y); 
+        parent_node.dashCurrentCooldown = parent_node.dashCooldown;       
     }
 
     override public void _ExitState() {

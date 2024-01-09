@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://d4j51hy41cpjv"]
+[gd_scene load_steps=30 format=3 uid="uid://d4j51hy41cpjv"]
 
 [ext_resource type="Script" path="res://Components/Entities/Player/player.cs" id="1_6rblb"]
 [ext_resource type="Texture2D" uid="uid://bn0wr6c3vw3ai" path="res://Assets/Entities/MainCharacter/king_idle.png" id="2_0o4jc"]
 [ext_resource type="Texture2D" uid="uid://be461d4jnjg5o" path="res://Assets/Entities/MainCharacter/king_running.png" id="3_acod8"]
 [ext_resource type="Texture2D" uid="uid://bxsyfn77tr1pq" path="res://Assets/Light/spotlight_1.png" id="3_v4ob8"]
+[ext_resource type="Texture2D" uid="uid://dbttp140hixj6" path="res://Assets/Entities/MainCharacter/king_shoot.png" id="4_f6n7o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hoexv"]
 atlas = ExtResource("2_0o4jc")
@@ -28,6 +29,38 @@ region = Rect2(64, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fx7w"]
 atlas = ExtResource("3_acod8")
 region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3osi1"]
+atlas = ExtResource("4_f6n7o")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb4pf"]
+atlas = ExtResource("4_f6n7o")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrd13"]
+atlas = ExtResource("4_f6n7o")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kypmj"]
+atlas = ExtResource("4_f6n7o")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuyxs"]
+atlas = ExtResource("4_f6n7o")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a507n"]
+atlas = ExtResource("4_f6n7o")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1df8q"]
+atlas = ExtResource("4_f6n7o")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax6xh"]
+atlas = ExtResource("4_f6n7o")
+region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ne7jo"]
 animations = [{
@@ -73,10 +106,39 @@ animations = [{
 "loop": true,
 "name": &"running_up",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3osi1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vb4pf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrd13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kypmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uuyxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a507n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1df8q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ax6xh")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_csixn"]
-size = Vector2(50, 60)
+size = Vector2(27, 28)
 
 [sub_resource type="Animation" id="Animation_lregr"]
 resource_name = "idle"
@@ -218,24 +280,54 @@ tracks/0/keys = {
 "values": []
 }
 
+[sub_resource type="Animation" id="Animation_dm03t"]
+resource_name = "shoot"
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"shoot"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2ftji"]
 _data = {
 "idle": SubResource("Animation_lregr"),
 "running_down": SubResource("Animation_2db3m"),
 "running_left": SubResource("Animation_7mkpb"),
 "running_right": SubResource("Animation_b5lja"),
-"running_up": SubResource("Animation_norib")
+"running_up": SubResource("Animation_norib"),
+"shoot": SubResource("Animation_dm03t")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwlpl"]
-size = Vector2(40, 60)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_idvf5"]
+radius = 15.5
+height = 54.0
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_6rblb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.995, 1.995)
+zoom = Vector2(1.015, 1.015)
 position_smoothing_enabled = true
 position_smoothing_speed = 4.305
 
@@ -243,11 +335,11 @@ position_smoothing_speed = 4.305
 position = Vector2(3.8147e-06, -3.8147e-06)
 scale = Vector2(2.0625, 2.0625)
 sprite_frames = SubResource("SpriteFrames_ne7jo")
-animation = &"idle"
+animation = &"shoot"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 3)
+position = Vector2(-5.5, 17)
 shape = SubResource("RectangleShape2D_csixn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -256,7 +348,7 @@ libraries = {
 }
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-1, 4)
+position = Vector2(-4, 4)
 scale = Vector2(9.5, 11.5)
 energy = 0.54
 texture = ExtResource("3_v4ob8")
@@ -265,6 +357,6 @@ texture_scale = 0.3
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(-3, 3)
-shape = SubResource("RectangleShape2D_iwlpl")
+position = Vector2(-5, 5)
+shape = SubResource("CapsuleShape2D_idvf5")
 debug_color = Color(0, 0.635294, 0.4, 0.419608)

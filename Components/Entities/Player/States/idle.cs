@@ -34,8 +34,12 @@ public class PlayerIdleState : State
             X = x_strength,
             Y = y_strength
         };
-        if(speed_vector != Vector2.Zero) {
-            return new PlayerWalkingState(parent_node);}
+        if(speed_vector != Vector2.Zero)
+            return new PlayerWalkingState(parent_node);
+        
+        if(Input.IsActionJustPressed("shoot") && parent_node.normalShotCurrentCooldown == 0) {
+            return new PlayerShootingState(parent_node);
+        }
 
         if (Input.IsActionJustPressed("slashAttack")) {
             return new PlayerSlashState(parent_node);
