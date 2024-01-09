@@ -91,6 +91,8 @@ _data = {
 [node name="NormalShot" type="Area2D"]
 rotation = 3.87756
 scale = Vector2(1.18, 1.18)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_4lf3c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

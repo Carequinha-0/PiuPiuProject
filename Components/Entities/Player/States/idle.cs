@@ -10,7 +10,6 @@ public class PlayerIdleState : State
         this.parent_node = parent_node;
     }
 
-    
     public float x_strength;
     public float y_strength;
 

@@ -33,6 +33,7 @@ script = ExtResource("1_6w8yb")
 sprite_frames = SubResource("SpriteFrames_7m3dh")
 
 [node name="Hitbox" type="Area2D" parent="."]
+collision_mask = 2
 script = ExtResource("3_644ck")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
