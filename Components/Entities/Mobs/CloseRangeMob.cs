@@ -8,14 +8,14 @@ public partial class CloseRangeMob : CharacterBody2D
 	Vector2 mobPosition = Vector2.Zero;
 	Vector2 targetPosition = Vector2.Zero;
 	Vector2 playerPosition;
-	Health health;
+	public Health health;
 	DamageReceiver damageReceiver;
+	public override void _Ready()
+	{
+		this.health = new Health(40, onDeath);
+		Area2D hitbox = GetNode<Area2D>("./Hitbox");
+		this.damage_receiver = new DamageReceiver(ref health, ref hitbox, 0.5f);
 
-    public override void _Ready()
-    {
-		health = new Health(20, onDeath);
-		Area2D hitbox = GetNode<Area2D>("Hitbox");
-		damageReceiver = new DamageReceiver(ref health, ref hitbox, 0.01f);
 	}
 	public override void _PhysicsProcess(double delta)
 	{

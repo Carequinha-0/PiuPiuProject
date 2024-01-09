@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dftslhbe1n0sb"]
+[gd_scene load_steps=13 format=3 uid="uid://dftslhbe1n0sb"]
 
 [ext_resource type="PackedScene" path="res://player.tscn" id="1_cryxy"]
 [ext_resource type="Texture2D" uid="uid://wmssjsvnyd08" path="res://Assets/Tilesets/dungeon_tileset_1.png" id="1_nj6s4"]
+[ext_resource type="Script" path="res://Main.cs" id="1_qne2c"]
 [ext_resource type="Texture2D" uid="uid://dt35l0sraussl" path="res://Assets/Tilesets/tf_dd_B_2.png" id="2_r5w6s"]
 [ext_resource type="Texture2D" uid="uid://jr6621f2rk5f" path="res://Assets/Tilesets/dungeon_1_tileset.png" id="3_vrkcq"]
 [ext_resource type="PackedScene" uid="uid://b7v3pgibvhy11" path="res://CloseRangeMob.tscn" id="6_mba5x"]
@@ -320,7 +321,8 @@ sources/0 = SubResource("TileSetAtlasSource_fm6m1")
 sources/1 = SubResource("TileSetAtlasSource_dmqxc")
 sources/2 = SubResource("TileSetAtlasSource_0ecr2")
 
-[node name="Node2D" type="Node2D"]
+[node name="Main" type="Node2D"]
+script = ExtResource("1_qne2c")
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(1.445, 1.445)
@@ -349,3 +351,11 @@ position = Vector2(-339, 22)
 
 [node name="Torch" parent="." instance=ExtResource("6_qcn77")]
 position = Vector2(-1, -202)
+
+[node name="Player" parent="." instance=ExtResource("1_cryxy")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.22
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]
