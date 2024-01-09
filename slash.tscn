@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Components/Entities/Player/SwordHitbox.cs" id="1_dgkrm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8d14q"]
-size = Vector2(29, 60)
+size = Vector2(69, 71)
 
 [node name="Slash" type="Area2D"]
 collision_layer = 2
