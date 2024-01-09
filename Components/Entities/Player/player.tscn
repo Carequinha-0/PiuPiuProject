@@ -355,8 +355,7 @@ texture = ExtResource("3_v4ob8")
 texture_scale = 0.3
 
 [node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(-5, 5)
