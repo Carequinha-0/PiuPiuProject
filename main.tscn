@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://dftslhbe1n0sb"]
 
-[ext_resource type="PackedScene" path="res://player.tscn" id="1_cryxy"]
+[ext_resource type="PackedScene" uid="uid://reqh44ywme7u" path="res://player.tscn" id="1_cryxy"]
 [ext_resource type="Texture2D" uid="uid://wmssjsvnyd08" path="res://Assets/Tilesets/dungeon_tileset_1.png" id="1_nj6s4"]
 [ext_resource type="Script" path="res://Main.cs" id="1_qne2c"]
 [ext_resource type="Texture2D" uid="uid://dt35l0sraussl" path="res://Assets/Tilesets/tf_dd_B_2.png" id="2_r5w6s"]
@@ -351,8 +351,6 @@ position = Vector2(-339, 22)
 
 [node name="Torch" parent="." instance=ExtResource("6_qcn77")]
 position = Vector2(-1, -202)
-
-[node name="Player" parent="." instance=ExtResource("1_cryxy")]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.22
