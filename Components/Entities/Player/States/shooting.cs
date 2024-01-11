@@ -24,7 +24,7 @@ public partial class PlayerShootingState : State
 
         mouse_pos = parent_node.GetGlobalMousePosition();
         NormalShot bullet = bullet_scene.Instantiate<NormalShot>();
-        bullet.Position = parent_node.Position + parent_node.Position.DirectionTo(mouse_pos) * 40;
+        bullet.Position = parent_node.Position + parent_node.Position.DirectionTo(mouse_pos);
         bullet.direction = parent_node.Position.DirectionTo(mouse_pos);
         bullet.velocity = 100;
         this.parent_node.AddSibling(bullet);
