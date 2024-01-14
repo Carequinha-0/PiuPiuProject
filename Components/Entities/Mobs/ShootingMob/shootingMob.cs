@@ -1,10 +1,10 @@
 using Godot;
 using System;
 
-public partial class CloseRangeMob : CharacterBody2D
+public partial class shootingMob : CharacterBody2D
 {
 	
-	public const float Speed = 70.0f;
+	public const float Speed = 100.0f;
 	Vector2 mobPosition = Vector2.Zero;
 	Vector2 targetPosition = Vector2.Zero;
 	Vector2 playerPosition;
@@ -12,8 +12,9 @@ public partial class CloseRangeMob : CharacterBody2D
 	DamageReceiver damageReceiver;
 	public override void _Ready()
 	{
-		this.health = new Health(60, onDeath);
+		this.health = new Health(80, onDeath);
 		Area2D hitbox = GetNode<Area2D>("./Hitbox");
+		GD.Print(hitbox);
 		this.damageReceiver = new DamageReceiver(ref health, ref hitbox, 0.5f);
 
 	}
@@ -25,11 +26,12 @@ public partial class CloseRangeMob : CharacterBody2D
 		Vector2 playerPosition = GetNode<CharacterBody2D>("../Player").Position;
 		targetPosition = (playerPosition - mobPosition).Normalized();
 		velocity = Vector2.Zero;
-		if (mobPosition.DistanceTo(playerPosition) < 10000) {
+		if (mobPosition.DistanceTo(playerPosition) < 10000/* && mobPosition.DistanceTo(playerPosition) > 100*/) {
 			velocity = targetPosition;
 		}
 		velocity = velocity * Speed;
 		Velocity = velocity;
+		GD.Print(velocity);
 		damageReceiver.ApplyCollidingDamage((float) delta);
 		MoveAndSlide();
 	}
