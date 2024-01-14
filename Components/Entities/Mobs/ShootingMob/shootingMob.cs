@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class shootingMob : CharacterBody2D
+public partial class ShootingMob : CharacterBody2D
 {
 	
 	public const float Speed = 100.0f;
@@ -10,11 +10,12 @@ public partial class shootingMob : CharacterBody2D
 	Vector2 playerPosition;
 	public Health health;
 	DamageReceiver damageReceiver;
+	public double bulletCooldownTimePassed = 0; 
+	public PackedScene bullet_scene = GD.Load<PackedScene>("res://Components/Entities/Objects/NormalShot/normal_shot.tscn");
 	public override void _Ready()
 	{
 		this.health = new Health(80, onDeath);
 		Area2D hitbox = GetNode<Area2D>("./Hitbox");
-		GD.Print(hitbox);
 		this.damageReceiver = new DamageReceiver(ref health, ref hitbox, 0.5f);
 
 	}
@@ -26,13 +27,24 @@ public partial class shootingMob : CharacterBody2D
 		Vector2 playerPosition = GetNode<CharacterBody2D>("../Player").Position;
 		targetPosition = (playerPosition - mobPosition).Normalized();
 		velocity = Vector2.Zero;
-		if (mobPosition.DistanceTo(playerPosition) < 10000/* && mobPosition.DistanceTo(playerPosition) > 100*/) {
+		if (mobPosition.DistanceTo(playerPosition) < 10000 && mobPosition.DistanceTo(playerPosition) > 250) {
 			velocity = targetPosition;
 		}
 		velocity = velocity * Speed;
 		Velocity = velocity;
-		GD.Print(velocity);
-		damageReceiver.ApplyCollidingDamage((float) delta);
+
+		bulletCooldownTimePassed += delta;
+
+		if (bulletCooldownTimePassed > 1) {
+			NormalShot bullet = bullet_scene.Instantiate<NormalShot>();
+
+			bullet.Position = this.Position + this.Position.DirectionTo(playerPosition);
+			bullet.direction = this.Position.DirectionTo(playerPosition);
+			bullet.velocity = 100;
+			this.AddSibling(bullet);
+
+			bulletCooldownTimePassed = 0;
+		}
 		MoveAndSlide();
 	}
 	public override void _Process(double delta)

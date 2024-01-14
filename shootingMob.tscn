@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://87blgk2y4hpi"]
 
+[ext_resource type="Script" path="res://Components/Entities/Mobs/ShootingMob/ShootingMob.cs" id="1_icf83"]
 [ext_resource type="Texture2D" uid="uid://j7n807vmw8uy" path="res://Assets/Entities/Mob/Zombie.png" id="1_otpha"]
-[ext_resource type="Script" path="res://Components/Entities/Mobs/ShootingMob/shootingMob.cs" id="1_uqy0c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pujja"]
 radius = 24.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uyavn"]
-radius = 33.0
+radius = 31.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k16fm"]
 atlas = ExtResource("1_otpha")
@@ -26,13 +26,14 @@ animations = [{
 
 [node name="ShootingMob" type="CharacterBody2D"]
 motion_mode = 1
-script = ExtResource("1_uqy0c")
+script = ExtResource("1_icf83")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 6)
 shape = SubResource("CircleShape2D_pujja")
 
 [node name="Hitbox" type="Area2D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(-1, 6)

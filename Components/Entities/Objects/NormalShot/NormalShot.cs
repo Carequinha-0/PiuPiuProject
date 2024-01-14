@@ -20,8 +20,8 @@ public partial class NormalShot : DamageSource
 		this.Position += direction*velocity;
 	}
 
-    public override void OnDamageDealt()
-    {
-        this.QueueFree();
-    }
+	public override void OnDamageDealt()
+	{
+		this.QueueFree();
+	}
 }

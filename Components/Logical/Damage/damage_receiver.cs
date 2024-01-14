@@ -20,7 +20,6 @@ public class DamageReceiver
 			DamageSource body_dealer = body as DamageSource;
 			if (body != null) {
 				if (timePassed >= damage_cooldown) {
-					GD.Print(body_dealer);
 					health.TakeDamage(body_dealer.damage);
 					body_dealer.OnDamageDealt();
 					timePassed = 0;

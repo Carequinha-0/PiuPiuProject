@@ -30,7 +30,6 @@ public partial class CloseRangeMob : CharacterBody2D
 		}
 		velocity = velocity * Speed;
 		Velocity = velocity;
-		damageReceiver.ApplyCollidingDamage((float) delta);
 		MoveAndSlide();
 	}
 	public override void _Process(double delta)
