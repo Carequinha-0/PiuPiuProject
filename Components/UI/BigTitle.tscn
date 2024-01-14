@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxyj63227dq4i"]
+
+[ext_resource type="FontFile" uid="uid://boq0u6gq5dnq8" path="res://Components/Fonte/PixelTakhisis-ZajJ.ttf" id="1_de525"]
+[ext_resource type="Script" path="res://Components/UI/BigTitle.cs" id="1_gbkv5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ur2pk"]
+font = ExtResource("1_de525")
+font_size = 60
+font_color = Color(1, 1, 1, 0)
+shadow_size = 7
+
+[node name="BigTitle" type="Node2D"]
+script = ExtResource("1_gbkv5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 368.0
+offset_top = 285.0
+offset_right = 791.0
+offset_bottom = 362.0
+label_settings = SubResource("LabelSettings_ur2pk")
+horizontal_alignment = 1
+vertical_alignment = 1

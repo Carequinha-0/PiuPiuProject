@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b7v3pgibvhy11" path="res://CloseRangeMob.tscn" id="6_mba5x"]
 [ext_resource type="PackedScene" uid="uid://ccscm6lgcdwj" path="res://Components/Entities/Objects/Torch/Torch.tscn" id="6_qcn77"]
 [ext_resource type="PackedScene" uid="uid://dw4wkrjf264wt" path="res://HUD.tscn" id="7_jxt5l"]
+[ext_resource type="PackedScene" uid="uid://dxyj63227dq4i" path="res://Components/UI/BigTitle.tscn" id="9_15qwu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fm6m1"]
 texture = ExtResource("1_nj6s4")
@@ -395,4 +396,8 @@ position = Vector2(1, 220)
 [node name="Marker2D10" type="Marker2D" parent="SpawnLocation" groups=["Spawners"]]
 position = Vector2(315, 158)
 
+[node name="BigTitle" parent="." instance=ExtResource("9_15qwu")]
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+
