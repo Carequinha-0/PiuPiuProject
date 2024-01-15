@@ -9,7 +9,7 @@ public partial class ShootingMobBullet : DamageSource
 	public override void _Ready()
 	{
 		this.damage = 10;
-		this.velocity = 6;
+		this.velocity = 2;
 		var anim_player = this.GetNode<AnimationPlayer>("./AnimationPlayer");
 		anim_player.CurrentAnimation = "default";
 	}

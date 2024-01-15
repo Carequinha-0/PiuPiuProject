@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfjwchq4062au"]
+[gd_scene load_steps=9 format=3 uid="uid://bfjwchq4062au"]
 
 [ext_resource type="Script" path="res://Main.cs" id="1_lsjpp"]
 [ext_resource type="Texture2D" uid="uid://jr6621f2rk5f" path="res://Assets/Tilesets/dungeon_1_tileset.png" id="1_rwlgh"]
 [ext_resource type="PackedScene" uid="uid://reqh44ywme7u" path="res://player.tscn" id="2_6nf2g"]
 [ext_resource type="PackedScene" uid="uid://dw4wkrjf264wt" path="res://HUD.tscn" id="4_nv22n"]
+[ext_resource type="Script" path="res://Components/Entities/Objects/Door.cs" id="5_42qte"]
+[ext_resource type="FontFile" uid="uid://boq0u6gq5dnq8" path="res://Components/Fonte/PixelTakhisis-ZajJ.ttf" id="6_4n630"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lglbw"]
 texture = ExtResource("1_rwlgh")
@@ -583,7 +585,7 @@ layer_1/tile_data = PackedInt32Array(-524291, 65536, 0, -524290, 65536, 0, -5242
 layer_2/tile_data = PackedInt32Array(-589824, 458752, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_6nf2g")]
-position = Vector2(-5, 8)
+position = Vector2(0, -1)
 
 [node name="SpawnLocation" type="Node2D" parent="."]
 
@@ -618,3 +620,16 @@ position = Vector2(304, -101)
 position = Vector2(-142, 346)
 
 [node name="HUD" parent="." instance=ExtResource("4_nv22n")]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(23, -389)
+script = ExtResource("5_42qte")
+
+[node name="InteractionText" type="Label" parent="Marker2D"]
+offset_left = -87.0
+offset_top = -54.0
+offset_right = 107.0
+offset_bottom = -5.0
+theme_override_fonts/font = ExtResource("6_4n630")
+text = "Press E to open
+ "

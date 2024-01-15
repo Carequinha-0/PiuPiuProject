@@ -27,7 +27,7 @@ public partial class ShootingMob : CharacterBody2D
 		Vector2 playerPosition = GetNode<CharacterBody2D>("../Player").Position;
 		targetPosition = (playerPosition - mobPosition).Normalized();
 		velocity = Vector2.Zero;
-		if (mobPosition.DistanceTo(playerPosition) < 10000 && mobPosition.DistanceTo(playerPosition) > 250) {
+		if (mobPosition.DistanceTo(playerPosition) < 10000 && mobPosition.DistanceTo(playerPosition) > 200) {
 			velocity = targetPosition;
 		}
 		velocity = velocity * Speed;
