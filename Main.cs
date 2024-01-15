@@ -3,7 +3,7 @@ using System;
 
 public partial class Main : Node2D
 {
-	public Area2D SpawnArea;
+	public Node2D SpawnArea;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -26,10 +26,10 @@ public partial class Main : Node2D
 
 		Random rnd = new Random();
 
-		SpawnArea = GetNode<Area2D>("./SpawnLocation");
-		var nodes = GetTree().GetNodesInGroup("Spawners");
+		SpawnArea = GetNode<Node2D>("SpawnLocation");
+		var nodes = GetTree().GetNodesInGroup("Markers");
 		var selectedNode = nodes[(int) rnd.Next(0, nodes.Count + 1)] as Marker2D;
 		var position = selectedNode.Position;
-		enemy1.Position = position;		
+		enemy1.Position = position;
 	}
 } 

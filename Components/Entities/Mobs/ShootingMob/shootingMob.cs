@@ -11,7 +11,7 @@ public partial class ShootingMob : CharacterBody2D
 	public Health health;
 	DamageReceiver damageReceiver;
 	public double bulletCooldownTimePassed = 0; 
-	public PackedScene bullet_scene = GD.Load<PackedScene>("res://Components/Entities/Objects/NormalShot/normal_shot.tscn");
+	public PackedScene bullet_scene = GD.Load<PackedScene>("res://shooting_mob_bullet.tscn");
 	public override void _Ready()
 	{
 		this.health = new Health(80, onDeath);
@@ -36,7 +36,7 @@ public partial class ShootingMob : CharacterBody2D
 		bulletCooldownTimePassed += delta;
 
 		if (bulletCooldownTimePassed > 1) {
-			NormalShot bullet = bullet_scene.Instantiate<NormalShot>();
+			ShootingMobBullet bullet = bullet_scene.Instantiate<ShootingMobBullet>();
 
 			bullet.Position = this.Position + this.Position.DirectionTo(playerPosition);
 			bullet.direction = this.Position.DirectionTo(playerPosition);

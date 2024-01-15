@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://c2wuavmjxmwfe"]
+
+[ext_resource type="Script" path="res://Components/Entities/Mobs/ShootingMob/ShootingMobBullet.cs" id="1_4h1my"]
+[ext_resource type="Texture2D" uid="uid://dvb4xf7jb36aj" path="res://Assets/Entities/MainCharacter/normal_shot.png" id="1_vkxhx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx8lu"]
+atlas = ExtResource("1_vkxhx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1ydj"]
+atlas = ExtResource("1_vkxhx")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmnrv"]
+atlas = ExtResource("1_vkxhx")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imfs0"]
+atlas = ExtResource("1_vkxhx")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dunvf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx8lu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1ydj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmnrv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imfs0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nddqw"]
+radius = 8.0
+
+[node name="ShootingMobBullet" type="Area2D"]
+script = ExtResource("1_4h1my")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dunvf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nddqw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

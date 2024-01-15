@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dftslhbe1n0sb"]
+[gd_scene load_steps=15 format=3 uid="uid://dftslhbe1n0sb"]
 
 [ext_resource type="PackedScene" uid="uid://reqh44ywme7u" path="res://player.tscn" id="1_cryxy"]
 [ext_resource type="Texture2D" uid="uid://wmssjsvnyd08" path="res://Assets/Tilesets/dungeon_tileset_1.png" id="1_nj6s4"]
@@ -323,9 +323,6 @@ sources/0 = SubResource("TileSetAtlasSource_fm6m1")
 sources/1 = SubResource("TileSetAtlasSource_dmqxc")
 sources/2 = SubResource("TileSetAtlasSource_0ecr2")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_owuj7"]
-size = Vector2(1097, 397)
-
 [node name="Main" type="Node2D"]
 script = ExtResource("1_qne2c")
 
@@ -358,48 +355,43 @@ position = Vector2(-339, 22)
 position = Vector2(-1, -202)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.503
 autostart = true
-
-[node name="SpawnLocation" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnLocation"]
-position = Vector2(20.5, 24.5)
-shape = SubResource("RectangleShape2D_owuj7")
-
-[node name="Marker2D" type="Marker2D" parent="SpawnLocation" groups=["Spawners"]]
-position = Vector2(-528, 39)
-
-[node name="Marker2D2" type="Marker2D" parent="SpawnLocation" groups=["Spawners"]]
-position = Vector2(-299, -153)
-
-[node name="Marker2D3" type="Marker2D" parent="SpawnLocation" groups=["Spawners"]]
-position = Vector2(573, -171)
-
-[node name="Marker2D4" type="Marker2D" parent="SpawnLocation" groups=["Spawners"]]
-position = Vector2(-524, -171)
-
-[node name="Marker2D5" type="Marker2D" parent="SpawnLocation" groups=["Spawners"]]
-position = Vector2(-523, 221)
-
-[node name="Marker2D6" type="Marker2D" parent="SpawnLocation" groups=["Spawners"]]
-position = Vector2(567, 221)
-
-[node name="Marker2D7" type="Marker2D" parent="SpawnLocation" groups=["Spawners"]]
-position = Vector2(567, 1)
-
-[node name="Marker2D8" type="Marker2D" parent="SpawnLocation" groups=["Spawners"]]
-position = Vector2(-1, -171)
-
-[node name="Marker2D9" type="Marker2D" parent="SpawnLocation" groups=["Spawners"]]
-position = Vector2(1, 220)
-
-[node name="Marker2D10" type="Marker2D" parent="SpawnLocation" groups=["Spawners"]]
-position = Vector2(315, 158)
 
 [node name="BigTitle" parent="." instance=ExtResource("9_15qwu")]
 
 [node name="ShootingMob" parent="." instance=ExtResource("9_6266p")]
 position = Vector2(338, 23)
+
+[node name="SpawnLocation" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(231, 132)
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(-232, -77)
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(2, 221)
+
+[node name="Marker2D4" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(568, 217)
+
+[node name="Marker2D5" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(563, 10)
+
+[node name="Marker2D6" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(567, -176)
+
+[node name="Marker2D7" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(1, -175)
+
+[node name="Marker2D8" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(-531, -173)
+
+[node name="Marker2D9" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(-526, 6)
+
+[node name="Marker2D10" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(-520, 218)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
