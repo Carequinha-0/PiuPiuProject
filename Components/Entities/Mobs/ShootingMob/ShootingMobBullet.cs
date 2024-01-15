@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class NormalShot : DamageSource
+public partial class ShootingMobBullet : DamageSource
 {
 	public Vector2 direction;
 	public int velocity;
@@ -9,7 +9,7 @@ public partial class NormalShot : DamageSource
 	public override void _Ready()
 	{
 		this.damage = 10;
-		this.velocity = 10;
+		this.velocity = 6;
 		var anim_player = this.GetNode<AnimationPlayer>("./AnimationPlayer");
 		anim_player.CurrentAnimation = "default";
 	}
