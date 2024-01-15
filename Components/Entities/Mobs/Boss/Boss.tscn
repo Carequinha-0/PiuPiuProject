@@ -98,7 +98,7 @@ script = ExtResource("1_rjqm6")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2.98, 2.98)
 sprite_frames = SubResource("SpriteFrames_3eah8")
-animation = &"walk_down_right"
+animation = &"walk_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_t7v8k")

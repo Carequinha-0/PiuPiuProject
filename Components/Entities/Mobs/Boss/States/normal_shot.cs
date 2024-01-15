@@ -55,6 +55,7 @@ public class BossNormalShotState : State
             shot.Position = parent_node.GlobalPosition;
 
             this.parent_node.AddSibling(shot);
+            parent_node.animated_sprite.Animation = parent_node.GetAnimationNameByAngle(shot.direction.Angle());
         }
         
         return null;

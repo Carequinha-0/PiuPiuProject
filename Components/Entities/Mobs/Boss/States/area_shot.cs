@@ -26,6 +26,7 @@ public class BossAreaShotState : State
     }
 
     override public State _process_state(double delta) {
+        parent_node.animated_sprite.Animation = "walk_down";
         const double SWITCH_ACTION_TIME = 5;
         const double SHOT_COOLDOWN = 0.2;
         waiting_time += delta;

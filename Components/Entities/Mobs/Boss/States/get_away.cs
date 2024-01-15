@@ -25,6 +25,7 @@ public class BossGetAwayState : State
     }
 
     override public State _process_state(double delta) {
+        parent_node.animated_sprite.Animation = parent_node.GetAnimationNameByAngle(parent_node.movement_speed_vector.Angle());
         parent_node.movement_speed_vector = Vector2.Zero;
         if(parent_node.GlobalPosition.DistanceTo(player_node.GlobalPosition) > 300) {
             parent_node.movement_speed_vector = GetMovementToPlayerSpeed();

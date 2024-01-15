@@ -53,24 +53,34 @@ public partial class Boss : CharacterBody2D
 
 	public string GetAnimationNameByAngle(float angle) {
 		var anim_string = "";
-		angle = angle * 180 / (float)Math.PI;
-		if (angle > 0 && angle < 45) {
-			anim_string = "walk_right";
-		} else if (angle > 45 && angle < 90) {
-			anim_string = "walk_up_right";
-		} else if (angle > 90 && angle < 135) {
-			anim_string = "walk_up";
-		} else if (angle > 135 && angle < 180) {
-			anim_string = "walk_up_left";
-		} else if (angle > 180 && angle < 225) {
-			anim_string = "walk_left";
-		} else if (angle > 225 && angle < 270) {
-			anim_string = "walk_down_left";
-		} else if (angle > 270 && angle < 315) {
-			anim_string = "walk_down";
-		} else if (angle > 315 && angle < 360) {
-			anim_string = "walk_down_right";
-		}
+
+		var angle_abs = Math.Abs(angle);
+
+		if(angle < 0) {
+			if(angle_abs < Math.PI/8) {
+				anim_string = "walk_right";
+			} else if (angle_abs < Math.PI/8 * 3) {
+				anim_string = "walk_up_right";
+			} else if (angle_abs < Math.PI/8 * 5) {
+				anim_string = "walk_up";
+			} else if (angle_abs < Math.PI/8 * 7) {
+				anim_string = "walk_up_left";
+			} else if (angle_abs <= Math.PI) {
+				anim_string = "walk_left";
+			}
+		} else {
+			if(angle_abs < Math.PI/8) {
+				anim_string = "walk_right";
+			} else if (angle_abs < Math.PI/8 * 3) {
+				anim_string = "walk_down_right";
+			} else if (angle_abs < Math.PI/8 * 5) {
+				anim_string = "walk_down";
+			} else if (angle_abs < Math.PI/8 * 7) {
+				anim_string = "walk_down_left";
+			} else if (angle_abs <= Math.PI || angle_abs == 0) {
+				anim_string = "walk_left";
+			}
+		} 
 
 		return anim_string;
 	}
