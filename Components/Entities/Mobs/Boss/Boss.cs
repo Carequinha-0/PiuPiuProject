@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Runtime.Serialization;
 
 public partial class Boss : CharacterBody2D
 {
@@ -8,6 +9,8 @@ public partial class Boss : CharacterBody2D
 	public Vector2 movement_speed_vector;
 	public float movement_speed = 100;
 	public AnimatedSprite2D animated_sprite;
+	public Health health;
+	public DamageReceiver damageReceiver;
 
 	public enum BossAction {
 		Rest,
@@ -20,6 +23,12 @@ public partial class Boss : CharacterBody2D
 	{
 		state_machine = new StateMachine(new BossGetAwayState(this));
 		animated_sprite = GetNode<AnimatedSprite2D>("./AnimatedSprite2D");
+		health = new Health(10, onDeath);
+		Area2D hitbox = GetNode<Area2D>("./Hitbox");
+		damageReceiver = new DamageReceiver(ref health, ref hitbox, 0.1f);
+	}
+	public void onDeath() {
+		QueueFree();
 	}
 	
 	public override void _PhysicsProcess(double delta)
@@ -28,6 +37,7 @@ public partial class Boss : CharacterBody2D
 		velocity = movement_speed_vector;
 		Velocity = velocity;
 		MoveAndSlide();
+		damageReceiver.ApplyCollidingDamage((float)delta);
 	}
 	public override void _Process(double delta)
 	{
