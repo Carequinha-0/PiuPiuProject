@@ -327,7 +327,6 @@ motion_mode = 1
 script = ExtResource("1_6rblb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.015, 1.015)
 position_smoothing_enabled = true
 position_smoothing_speed = 4.305
 
@@ -335,7 +334,7 @@ position_smoothing_speed = 4.305
 position = Vector2(3.8147e-06, -3.8147e-06)
 scale = Vector2(2.0625, 2.0625)
 sprite_frames = SubResource("SpriteFrames_ne7jo")
-animation = &"shoot"
+animation = &"idle"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

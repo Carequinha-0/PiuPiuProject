@@ -15,6 +15,7 @@ public partial class Main : Node2D
 	
 	public void OnTimerTimeout()
 	{
+		return; // TEMPORARY MUST REMOVE
 		var scene = GD.Load<PackedScene>("res://CloseRangeMob.tscn");
 		var enemy1 = scene.Instantiate<CharacterBody2D>();
 		AddChild(enemy1);

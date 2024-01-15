@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dftslhbe1n0sb"]
+[gd_scene load_steps=15 format=3 uid="uid://dftslhbe1n0sb"]
 
 [ext_resource type="PackedScene" uid="uid://reqh44ywme7u" path="res://player.tscn" id="1_cryxy"]
 [ext_resource type="Texture2D" uid="uid://wmssjsvnyd08" path="res://Assets/Tilesets/dungeon_tileset_1.png" id="1_nj6s4"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ccscm6lgcdwj" path="res://Components/Entities/Objects/Torch/Torch.tscn" id="6_qcn77"]
 [ext_resource type="PackedScene" uid="uid://dw4wkrjf264wt" path="res://HUD.tscn" id="7_jxt5l"]
 [ext_resource type="PackedScene" uid="uid://dxyj63227dq4i" path="res://Components/UI/BigTitle.tscn" id="9_15qwu"]
+[ext_resource type="PackedScene" uid="uid://bbb58iawbb4g8" path="res://Components/Entities/Mobs/Boss/Boss.tscn" id="10_4ww6b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fm6m1"]
 texture = ExtResource("1_nj6s4")
@@ -358,5 +359,9 @@ wait_time = 1.22
 autostart = true
 
 [node name="BigTitle" parent="." instance=ExtResource("9_15qwu")]
+
+[node name="Boss" parent="." instance=ExtResource("10_4ww6b")]
+position = Vector2(555, 8)
+scale = Vector2(0.46, 0.46)
 
 [connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]
