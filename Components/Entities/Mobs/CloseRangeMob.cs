@@ -4,7 +4,7 @@ using System;
 public partial class CloseRangeMob : CharacterBody2D
 {
 	
-	public const float Speed = 70.0f;
+	public const float Speed = 130.0f;
 	Vector2 mobPosition = Vector2.Zero;
 	Vector2 targetPosition = Vector2.Zero;
 	Vector2 playerPosition;

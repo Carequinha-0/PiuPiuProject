@@ -18,7 +18,7 @@ public partial class Main : Node2D
 		if(Input.IsActionJustPressed("Esc")) {
 			GetTree().ChangeSceneToFile("res://MainMenu.tscn");
 		}
-		if (spawnCooldown > 2) {
+		if (spawnCooldown >= 7) {
 			Random rnd = new Random();
 
 			var shooting_mob = GD.Load<PackedScene>("res://shootingMob.tscn");
