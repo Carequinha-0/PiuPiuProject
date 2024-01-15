@@ -355,6 +355,7 @@ position = Vector2(-339, 22)
 position = Vector2(-1, -202)
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
 autostart = true
 
 [node name="BigTitle" parent="." instance=ExtResource("9_15qwu")]
