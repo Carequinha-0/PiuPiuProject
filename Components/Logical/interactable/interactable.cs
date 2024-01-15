@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public abstract partial class Interactible : Node2D  {
+public abstract partial class Interactable : Node2D  {
     public float range;
     public string label;
 	public Label interaction_text;

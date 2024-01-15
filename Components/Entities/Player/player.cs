@@ -30,9 +30,7 @@ public partial class player : CharacterBody2D
 		stateMachine.Input_Process();
 		stateMachine.Process(delta);
 		damage_receiver.ApplyCollidingDamage((float)delta);
-		if(Input.IsActionJustPressed("Esc")) {
-			GetTree().ChangeSceneToFile("res://MainMenu.tscn");
-		}
+
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -59,6 +57,6 @@ public partial class player : CharacterBody2D
 
 	public void OnDeath()
 	{
-		
+		GetTree().ChangeSceneToFile("res://death_screen.tscn");
 	}
 }
