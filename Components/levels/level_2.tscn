@@ -621,11 +621,11 @@ position = Vector2(-139, 200)
 
 [node name="HUD" parent="." instance=ExtResource("3_g21q7")]
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="Door" type="Marker2D" parent="."]
 position = Vector2(-25, -296)
 script = ExtResource("5_bv5wu")
 
-[node name="InteractionText" type="Label" parent="Marker2D"]
+[node name="InteractionText" type="Label" parent="Door"]
 offset_left = -92.0
 offset_top = -57.0
 offset_right = 102.0

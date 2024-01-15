@@ -16,7 +16,7 @@ public partial class Torch : InteractableToggleable
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 
-	public override void ActionLoop() {
+	public override void ActionLoop(double delta) {
 		ToggleVisibilityOnRange();
 		if (this.active) {
 			this.light_node.Visible = true;
