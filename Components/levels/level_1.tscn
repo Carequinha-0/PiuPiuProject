@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfjwchq4062au"]
+[gd_scene load_steps=7 format=3 uid="uid://bfjwchq4062au"]
 
+[ext_resource type="Script" path="res://Main.cs" id="1_lsjpp"]
 [ext_resource type="Texture2D" uid="uid://jr6621f2rk5f" path="res://Assets/Tilesets/dungeon_1_tileset.png" id="1_rwlgh"]
 [ext_resource type="PackedScene" uid="uid://reqh44ywme7u" path="res://player.tscn" id="2_6nf2g"]
+[ext_resource type="PackedScene" uid="uid://dw4wkrjf264wt" path="res://HUD.tscn" id="4_nv22n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lglbw"]
 texture = ExtResource("1_rwlgh")
@@ -570,6 +572,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lglbw")
 
 [node name="level_1" type="Node2D"]
+script = ExtResource("1_lsjpp")
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(1.445, 1.445)
@@ -579,3 +582,38 @@ layer_0/tile_data = PackedInt32Array(-1, 65536, 1, -65536, 65536, 1, -65535, 655
 layer_1/tile_data = PackedInt32Array(-524291, 65536, 0, -524290, 65536, 0, -524289, 65536, 0, -589824, 65536, 0, -589823, 65536, 0, -589822, 65536, 0, -589821, 196608, 0, -524283, 196608, 0, -458746, 196608, 0, -393209, 196608, 0, -262136, 196608, 0, -524292, 196608, 268435456, -458758, 196608, 268435456, -393223, 196608, 268435456, -327688, 196608, 268435456, -196617, 196608, 268435456, -524285, 196608, 1, -458747, 196608, 1, -393210, 196608, 1, -262137, 196608, 1, -458756, 196608, 268435457, -393222, 196608, 268435457, -327687, 196608, 268435457, -196616, 196608, 268435457, -262152, 0, 1, -327673, 0, 268435457, -196600, 0, 268435457, -131064, 0, 268435457, -65528, 0, 268435457, 8, 0, 268435457, 65544, 0, 268435457, 131080, 0, 268435459, -131081, 0, 1, -65545, 0, 1, -9, 0, 1, 65527, 0, 1, 131063, 0, 1, 196599, 0, 1, -458757, 65536, 0, -524284, 65536, 0, 196616, 0, 268435460, 196615, 327680, 268435459, 458756, 262144, 3, 262151, 0, 268435457, 458755, 196608, 3, 524291, 196608, 4, 524289, 65536, 4, 524290, 131072, 4, 589823, 65536, 4, 524288, 131072, 4, 589822, 65536, 4, 589820, 0, 4, 589821, 65536, 4, 524284, 196608, 268435459, 524283, 262144, 3, 458746, 196608, 268435459, 393209, 196608, 268435459, 262136, 196608, 268435459, 262135, 0, 4, 393208, 0, 4, 458745, 0, 4, 524282, 0, 4, 327672, 0, 1, 327687, 196608, 4, 327686, 327680, 268435459, 393222, 196608, 4, 393221, 196608, 3, 458757, 196608, 4)
 
 [node name="Player" parent="." instance=ExtResource("2_6nf2g")]
+position = Vector2(-5, 8)
+
+[node name="SpawnLocation" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(136, 332)
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(-357, -49)
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(-265, -244)
+
+[node name="Marker2D4" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(264, 216)
+
+[node name="Marker2D5" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(343, 87)
+
+[node name="Marker2D6" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(-79, -317)
+
+[node name="Marker2D7" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(-241, 221)
+
+[node name="Marker2D8" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(204, -231)
+
+[node name="Marker2D9" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(304, -101)
+
+[node name="Marker2D10" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(-142, 346)
+
+[node name="HUD" parent="." instance=ExtResource("4_nv22n")]
