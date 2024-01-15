@@ -8,7 +8,7 @@ public partial class NormalShot : DamageSource
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		this.damage = 10;
+		this.damage = 20;
 		this.velocity = 10;
 		var anim_player = this.GetNode<AnimationPlayer>("./AnimationPlayer");
 		anim_player.CurrentAnimation = "default";
