@@ -56,6 +56,7 @@ public class BossAreaShotState : State
                 shot.velocity = 100;
                 shot.direction = direction;
                 shot.Position = parent_node.GlobalPosition;
+                shot.Rotate(direction.Angle());
                 this.parent_node.AddSibling(shot);
                 direction = direction.Rotated(((float)Math.PI * 2)/10);
             }

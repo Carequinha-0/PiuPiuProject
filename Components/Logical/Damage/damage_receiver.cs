@@ -18,7 +18,7 @@ public class DamageReceiver
 
 		foreach (var body in bodies) {
 			DamageSource body_dealer = body as DamageSource;
-			if (body != null) {
+			if (body != null && body_dealer != null) {
 				if (timePassed >= damage_cooldown) {
 					health.TakeDamage(body_dealer.damage);
 					body_dealer.OnDamageDealt();

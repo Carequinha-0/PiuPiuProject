@@ -53,6 +53,7 @@ public class BossNormalShotState : State
             shot.velocity = 100;
             shot.direction = parent_node.GlobalPosition.DirectionTo(player_node.GlobalPosition);
             shot.Position = parent_node.GlobalPosition;
+            shot.Rotate(shot.direction.Angle());
 
             this.parent_node.AddSibling(shot);
             parent_node.animated_sprite.Animation = parent_node.GetAnimationNameByAngle(shot.direction.Angle());

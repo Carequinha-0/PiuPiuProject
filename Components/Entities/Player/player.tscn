@@ -327,6 +327,7 @@ motion_mode = 1
 script = ExtResource("1_6rblb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.51, 1.51)
 position_smoothing_enabled = true
 position_smoothing_speed = 4.305
 
