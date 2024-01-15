@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7v3pgibvhy11"]
+[gd_scene load_steps=17 format=3 uid="uid://b7v3pgibvhy11"]
 
 [ext_resource type="Script" path="res://Components/Entities/Mobs/CloseRangeMob.cs" id="1_6w8yb"]
 [ext_resource type="Texture2D" uid="uid://j7n807vmw8uy" path="res://Assets/Entities/Mob/Zombie.png" id="1_t65rv"]
 [ext_resource type="Script" path="res://Components/Entities/Mobs/CloseRangeMobHitbox.cs" id="3_644ck"]
+[ext_resource type="Texture2D" uid="uid://p1skupo78ben" path="res://Assets/Entities/lifebar_mob.png" id="4_vvoxi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ccrm2"]
 atlas = ExtResource("1_t65rv")
@@ -25,7 +26,65 @@ radius = 18.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvwei"]
 radius = 13.0384
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_23jfo"]
+atlas = ExtResource("4_vvoxi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s0vj"]
+atlas = ExtResource("4_vvoxi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xrce"]
+atlas = ExtResource("4_vvoxi")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyc16"]
+atlas = ExtResource("4_vvoxi")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3llu"]
+atlas = ExtResource("4_vvoxi")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1d2w"]
+atlas = ExtResource("4_vvoxi")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hb23j"]
+atlas = ExtResource("4_vvoxi")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_21m8r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23jfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s0vj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xrce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyc16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3llu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1d2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hb23j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="CloseRangeMob" type="CharacterBody2D"]
+scale = Vector2(1.24, 1.24)
 motion_mode = 1
 script = ExtResource("1_6w8yb")
 
@@ -41,3 +100,8 @@ shape = SubResource("CircleShape2D_7au6c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cvwei")
+
+[node name="HealthBar" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -19)
+scale = Vector2(0.83, 0.83)
+sprite_frames = SubResource("SpriteFrames_21m8r")

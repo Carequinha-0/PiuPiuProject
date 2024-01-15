@@ -9,13 +9,14 @@ public partial class CloseRangeMob : CharacterBody2D
 	Vector2 targetPosition = Vector2.Zero;
 	Vector2 playerPosition;
 	public Health health;
+	public HealthBarMob healthBar;
 	DamageReceiver damageReceiver;
 	public override void _Ready()
 	{
 		this.health = new Health(60, onDeath);
 		Area2D hitbox = GetNode<Area2D>("./Hitbox");
 		this.damageReceiver = new DamageReceiver(ref health, ref hitbox, 0.5f);
-
+		this.healthBar = new HealthBarMob(ref health, GetNode<AnimatedSprite2D>("./HealthBar"));
 	}
 	public override void _PhysicsProcess(double delta)
 	{
@@ -35,6 +36,7 @@ public partial class CloseRangeMob : CharacterBody2D
 	public override void _Process(double delta)
 	{
 		damageReceiver.ApplyCollidingDamage((float) delta);
+		healthBar.UpdateHealthBar();
 	}
 
 	public void onDeath() {
