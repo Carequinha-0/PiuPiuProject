@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3xmbavnuekft"
+path="res://.godot/imported/Ludovico Einaudi - Experience (Official Visualizer).mp3-e47bb68a01802e7c79b96e5e4cca181f.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Ludovico Einaudi - Experience (Official Visualizer).mp3"
+dest_files=["res://.godot/imported/Ludovico Einaudi - Experience (Official Visualizer).mp3-e47bb68a01802e7c79b96e5e4cca181f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -580,3 +580,5 @@ layer_1/tile_data = PackedInt32Array(-524291, 65536, 0, -524290, 65536, 0, -5242
 layer_2/tile_data = PackedInt32Array(-589824, 458752, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_6nf2g")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
