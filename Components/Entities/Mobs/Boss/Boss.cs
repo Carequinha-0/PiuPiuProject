@@ -11,6 +11,7 @@ public partial class Boss : CharacterBody2D
 	public AnimatedSprite2D animated_sprite;
 	public Health health;
 	public DamageReceiver damageReceiver;
+	public HealthBarMob healthBar;
 
 	public enum BossAction {
 		Rest,
@@ -23,9 +24,10 @@ public partial class Boss : CharacterBody2D
 	{
 		state_machine = new StateMachine(new BossGetAwayState(this));
 		animated_sprite = GetNode<AnimatedSprite2D>("./AnimatedSprite2D");
-		health = new Health(10, onDeath);
+		health = new Health(200, onDeath);
 		Area2D hitbox = GetNode<Area2D>("./Hitbox");
 		damageReceiver = new DamageReceiver(ref health, ref hitbox, 0.1f);
+		this.healthBar = new HealthBarMob(ref health, GetNode<AnimatedSprite2D>("./HealthBar"));
 	}
 	public void onDeath() {
 		QueueFree();
@@ -42,6 +44,7 @@ public partial class Boss : CharacterBody2D
 	public override void _Process(double delta)
 	{
 		state_machine.Process(delta);
+		healthBar.UpdateHealthBar();
 	}
 
 	public BossAction RollAction() {

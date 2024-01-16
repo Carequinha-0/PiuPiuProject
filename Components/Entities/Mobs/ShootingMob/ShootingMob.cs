@@ -11,12 +11,14 @@ public partial class ShootingMob : CharacterBody2D
 	public Health health;
 	DamageReceiver damageReceiver;
 	public double bulletCooldownTimePassed = 0; 
+	public HealthBarMob healthBar;
 	public PackedScene bullet_scene = GD.Load<PackedScene>("res://shooting_mob_bullet.tscn");
 	public override void _Ready()
 	{
 		this.health = new Health(80, onDeath);
 		Area2D hitbox = GetNode<Area2D>("./Hitbox");
 		this.damageReceiver = new DamageReceiver(ref health, ref hitbox, 0.5f);
+		this.healthBar = new HealthBarMob(ref health, GetNode<AnimatedSprite2D>("./HealthBar"));
 
 	}
 	public override void _PhysicsProcess(double delta)
@@ -50,6 +52,7 @@ public partial class ShootingMob : CharacterBody2D
 	public override void _Process(double delta)
 	{
 		damageReceiver.ApplyCollidingDamage((float) delta);
+		healthBar.UpdateHealthBar();
 	}
 
 	public void onDeath() {

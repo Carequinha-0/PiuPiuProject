@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bbb58iawbb4g8"]
+[gd_scene load_steps=23 format=3 uid="uid://bbb58iawbb4g8"]
 
 [ext_resource type="Texture2D" uid="uid://dioskepkouly6" path="res://icon.svg" id="1_citwu"]
 [ext_resource type="Script" path="res://Components/Entities/Mobs/Boss/Boss.cs" id="1_rjqm6"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://v7qntkk5hn1i" path="res://Assets/Entities/Boss/boss_up.png" id="8_0ujxg"]
 [ext_resource type="Texture2D" uid="uid://dnfhfcl72nxid" path="res://Assets/Entities/Boss/boss_up_left.png" id="9_mprgd"]
 [ext_resource type="Texture2D" uid="uid://cnug74uwsnoay" path="res://Assets/Entities/Boss/boss_up_right.png" id="10_2g5tc"]
+[ext_resource type="Texture2D" uid="uid://p1skupo78ben" path="res://Assets/Entities/lifebar_mob.png" id="11_lm87j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3eah8"]
 animations = [{
@@ -92,6 +93,63 @@ radius = 63.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_ayxe3"]
 radius = 77.026
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gai8d"]
+atlas = ExtResource("11_lm87j")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7om6d"]
+atlas = ExtResource("11_lm87j")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e6wb"]
+atlas = ExtResource("11_lm87j")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dsm5"]
+atlas = ExtResource("11_lm87j")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2psar"]
+atlas = ExtResource("11_lm87j")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybp7o"]
+atlas = ExtResource("11_lm87j")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkrwq"]
+atlas = ExtResource("11_lm87j")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jlg4g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gai8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7om6d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e6wb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dsm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2psar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybp7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkrwq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Boss" type="CharacterBody2D"]
 script = ExtResource("1_rjqm6")
 
@@ -109,3 +167,8 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 modulate = Color(1, 0.168627, 0.886275, 1)
 shape = SubResource("CircleShape2D_ayxe3")
+
+[node name="HealthBar" type="AnimatedSprite2D" parent="."]
+position = Vector2(-10, -123)
+scale = Vector2(3.18, 3.18)
+sprite_frames = SubResource("SpriteFrames_jlg4g")

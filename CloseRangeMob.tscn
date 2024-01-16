@@ -1,30 +1,30 @@
 [gd_scene load_steps=17 format=3 uid="uid://b7v3pgibvhy11"]
 
 [ext_resource type="Script" path="res://Components/Entities/Mobs/CloseRangeMob.cs" id="1_6w8yb"]
-[ext_resource type="Texture2D" uid="uid://j7n807vmw8uy" path="res://Assets/Entities/Mob/Zombie.png" id="1_t65rv"]
+[ext_resource type="Texture2D" uid="uid://dl6bdb82vxyj5" path="res://Assets/Entities/CloseRangeMob/closerange_idle.png" id="2_a216c"]
 [ext_resource type="Script" path="res://Components/Entities/Mobs/CloseRangeMobHitbox.cs" id="3_644ck"]
 [ext_resource type="Texture2D" uid="uid://p1skupo78ben" path="res://Assets/Entities/lifebar_mob.png" id="4_vvoxi"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ccrm2"]
-atlas = ExtResource("1_t65rv")
-region = Rect2(0, 0, 29, 38)
+[sub_resource type="AtlasTexture" id="AtlasTexture_k70in"]
+atlas = ExtResource("2_a216c")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7m3dh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ccrm2")
+"texture": SubResource("AtlasTexture_k70in")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7au6c"]
-radius = 18.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_akrbv"]
+radius = 13.7097
+height = 37.0968
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_cvwei"]
-radius = 13.0384
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8h063"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_23jfo"]
 atlas = ExtResource("4_vvoxi")
@@ -89,6 +89,8 @@ motion_mode = 1
 script = ExtResource("1_6w8yb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2.41935)
+scale = Vector2(1.24, 1.24)
 sprite_frames = SubResource("SpriteFrames_7m3dh")
 
 [node name="Hitbox" type="Area2D" parent="."]
@@ -96,10 +98,10 @@ collision_mask = 2
 script = ExtResource("3_644ck")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("CircleShape2D_7au6c")
+shape = SubResource("CapsuleShape2D_akrbv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_cvwei")
+shape = SubResource("CapsuleShape2D_8h063")
 
 [node name="HealthBar" type="AnimatedSprite2D" parent="."]
 position = Vector2(-2, -19)
