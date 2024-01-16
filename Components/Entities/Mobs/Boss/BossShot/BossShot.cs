@@ -1,17 +1,15 @@
 using Godot;
 using System;
 
-public partial class NormalShot : DamageSource
+public partial class BossShot : DamageSource
 {
 	public Vector2 direction;
 	public int velocity;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		this.damage = 20;
+		this.damage = 10;
 		this.velocity = 10;
-		var anim_player = this.GetNode<AnimationPlayer>("./AnimationPlayer");
-		anim_player.CurrentAnimation = "default";
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,8 +18,8 @@ public partial class NormalShot : DamageSource
 		this.Position += direction*velocity;
 	}
 
-	public override void OnDamageDealt()
-	{
-		this.QueueFree();
-	}
+    public override void OnDamageDealt()
+    {
+        this.QueueFree();
+    }
 }

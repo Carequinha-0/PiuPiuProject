@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxtod07vbx8hm"]
+
+[ext_resource type="Script" path="res://Components/Entities/Mobs/Boss/BossShot/BossShot.cs" id="1_pqxpc"]
+[ext_resource type="Texture2D" uid="uid://dsxcbr4nbf34q" path="res://Assets/Entities/Boss/projectile_vermelho.png" id="2_i6eor"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ripha"]
+size = Vector2(16, 4)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_pqxpc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ripha")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.53125, 0.53125)
+texture = ExtResource("2_i6eor")

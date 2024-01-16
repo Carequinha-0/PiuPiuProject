@@ -14,8 +14,8 @@ public partial class player : CharacterBody2D
 	public float dashCurrentCooldown = 0;
 	public float normalShotCooldown = 0.1f;
 	public float normalShotCurrentCooldown = 0;
-
-
+	public float levelSpawnMultiplyer = 6;
+	public int rondasPassadas = 0;
 	public override void _Ready()
 	{
 		this.health = new Health(100, OnDeath);
@@ -30,9 +30,7 @@ public partial class player : CharacterBody2D
 		stateMachine.Input_Process();
 		stateMachine.Process(delta);
 		damage_receiver.ApplyCollidingDamage((float)delta);
-		if(Input.IsActionJustPressed("Esc")) {
-			GetTree().ChangeSceneToFile("res://MainMenu.tscn");
-		}
+
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -59,7 +57,6 @@ public partial class player : CharacterBody2D
 
 	public void OnDeath()
 	{
-		GD.Print("Player died");
-		
+		GetTree().ChangeSceneToFile("res://death_screen.tscn");
 	}
 }

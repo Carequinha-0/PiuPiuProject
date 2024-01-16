@@ -77,7 +77,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_csixn"]
-size = Vector2(45, 64)
+size = Vector2(38, 60)
 
 [sub_resource type="Animation" id="Animation_lregr"]
 resource_name = "idle"
@@ -228,8 +228,8 @@ _data = {
 "running_up": SubResource("Animation_norib")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vqanx"]
-radius = 24.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uljp4"]
+size = Vector2(50, 71.25)
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
@@ -248,6 +248,7 @@ animation = &"idle"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 4)
 shape = SubResource("RectangleShape2D_csixn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -265,7 +266,8 @@ texture_scale = 0.3
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("CircleShape2D_vqanx")
+position = Vector2(0, 2.375)
+shape = SubResource("RectangleShape2D_uljp4")
 debug_color = Color(0, 0.635294, 0.4, 0.419608)
 
 [node name="Weapon" type="Node2D" parent="."]

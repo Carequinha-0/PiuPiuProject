@@ -17,7 +17,7 @@ public partial class MainMenu : Node2D
 	{
 	}
 	public void _on_play_pressed(){
-		GetTree().ChangeSceneToFile("res://main.tscn");
+		GetTree().ChangeSceneToFile("res://Components/levels/level_1.tscn");
 	}
 	public void _on_quit_pressed(){
 		GetNode<Window>("Confirmation").Show();
