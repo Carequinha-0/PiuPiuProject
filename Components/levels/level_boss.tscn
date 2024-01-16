@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cl2iqg00bobhx"]
+[gd_scene load_steps=9 format=3 uid="uid://c1emmqcory0nu"]
 
 [ext_resource type="Texture2D" uid="uid://jr6621f2rk5f" path="res://Assets/Tilesets/dungeon_1_tileset.png" id="1_wg718"]
 [ext_resource type="PackedScene" uid="uid://d4j51hy41cpjv" path="res://Components/Entities/Player/player.tscn" id="2_n1qbg"]
 [ext_resource type="PackedScene" uid="uid://ccscm6lgcdwj" path="res://Components/Entities/Objects/Torch/Torch.tscn" id="3_woiqt"]
 [ext_resource type="AudioStream" uid="uid://bfer0vmmlkw1v" path="res://Assets/Audio/Can You Hear The Music.mp3" id="4_caeh5"]
+[ext_resource type="PackedScene" uid="uid://bbb58iawbb4g8" path="res://Components/Entities/Mobs/Boss/Boss.tscn" id="5_jxl6e"]
+[ext_resource type="PackedScene" uid="uid://dw4wkrjf264wt" path="res://HUD.tscn" id="6_16jiy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jq8x8"]
 texture = ExtResource("1_wg718")
@@ -593,3 +595,11 @@ position = Vector2(469, -152)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_caeh5")
 autoplay = true
+
+[node name="Boss" parent="." instance=ExtResource("5_jxl6e")]
+position = Vector2(-6, 290)
+
+[node name="HUD" parent="." instance=ExtResource("6_16jiy")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.505882, 0.505882, 0.505882, 1)

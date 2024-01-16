@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://bbb58iawbb4g8"]
+[gd_scene load_steps=24 format=3 uid="uid://bbb58iawbb4g8"]
 
 [ext_resource type="Texture2D" uid="uid://dioskepkouly6" path="res://icon.svg" id="1_citwu"]
 [ext_resource type="Script" path="res://Components/Entities/Mobs/Boss/Boss.cs" id="1_rjqm6"]
+[ext_resource type="Texture2D" uid="uid://bxsyfn77tr1pq" path="res://Assets/Light/spotlight_1.png" id="2_j2kfw"]
 [ext_resource type="Texture2D" uid="uid://er1m6r286y3v" path="res://Assets/Entities/Boss/boss_down.png" id="3_y2axa"]
 [ext_resource type="Texture2D" uid="uid://dq1oc0oq2pvc4" path="res://Assets/Entities/Boss/boss_down_left.png" id="4_ooo2s"]
 [ext_resource type="Texture2D" uid="uid://bx2f5yr6y605s" path="res://Assets/Entities/Boss/boss_down_right.png" id="5_c7c0u"]
@@ -152,6 +153,14 @@ animations = [{
 
 [node name="Boss" type="CharacterBody2D"]
 script = ExtResource("1_rjqm6")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-1, 4)
+scale = Vector2(9.5, 11.5)
+color = Color(0.905882, 0.294118, 0.529412, 1)
+energy = 1.55
+texture = ExtResource("2_j2kfw")
+texture_scale = 0.09
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2.98, 2.98)

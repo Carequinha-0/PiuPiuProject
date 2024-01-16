@@ -1,9 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://cd7bkuvaorup3"]
+[gd_scene load_steps=7 format=3 uid="uid://cx52xjeatu7eo"]
 
+[ext_resource type="Script" path="res://Components/levels/victory_screen.cs" id="1_2c10a"]
 [ext_resource type="Texture2D" uid="uid://dna8awc61d42s" path="res://Assets/Images/parques_de_sintra_castelo_dos_mouros.webp" id="1_jxg7e"]
 [ext_resource type="AudioStream" uid="uid://c3xmbavnuekft" path="res://Assets/Audio/Ludovico Einaudi - Experience (Official Visualizer).mp3" id="2_of2nc"]
+[ext_resource type="FontFile" uid="uid://boq0u6gq5dnq8" path="res://Components/Fonte/PixelTakhisis-ZajJ.ttf" id="3_cbc1w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tyg8g"]
+font = ExtResource("3_cbc1w")
+font_size = 61
+
+[sub_resource type="LabelSettings" id="LabelSettings_5s14s"]
+font = ExtResource("3_cbc1w")
+font_size = 101
 
 [node name="Victory_screen" type="Node2D"]
+script = ExtResource("1_2c10a")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -962.0
@@ -17,3 +28,19 @@ texture = ExtResource("1_jxg7e")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_of2nc")
 autoplay = true
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -446.0
+offset_top = -282.0
+offset_right = 1114.0
+offset_bottom = -153.0
+text = "Clica ESC para Saír"
+label_settings = SubResource("LabelSettings_tyg8g")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -753.0
+offset_top = -457.0
+offset_right = 807.0
+offset_bottom = -328.0
+text = "Recuperaste Portugal"
+label_settings = SubResource("LabelSettings_5s14s")

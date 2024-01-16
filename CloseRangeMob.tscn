@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://b7v3pgibvhy11"]
+[gd_scene load_steps=18 format=3 uid="uid://b7v3pgibvhy11"]
 
 [ext_resource type="Script" path="res://Components/Entities/Mobs/CloseRangeMob.cs" id="1_6w8yb"]
 [ext_resource type="Texture2D" uid="uid://dl6bdb82vxyj5" path="res://Assets/Entities/CloseRangeMob/closerange_idle.png" id="2_a216c"]
 [ext_resource type="Script" path="res://Components/Entities/Mobs/CloseRangeMobHitbox.cs" id="3_644ck"]
 [ext_resource type="Texture2D" uid="uid://p1skupo78ben" path="res://Assets/Entities/lifebar_mob.png" id="4_vvoxi"]
+[ext_resource type="Texture2D" uid="uid://bxsyfn77tr1pq" path="res://Assets/Light/spotlight_1.png" id="5_ijn88"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k70in"]
 atlas = ExtResource("2_a216c")
@@ -107,3 +108,11 @@ shape = SubResource("CapsuleShape2D_8h063")
 position = Vector2(-2, -19)
 scale = Vector2(0.83, 0.83)
 sprite_frames = SubResource("SpriteFrames_21m8r")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-1, 4)
+scale = Vector2(9.5, 11.5)
+color = Color(0.462745, 0.505882, 0.92549, 1)
+energy = 0.54
+texture = ExtResource("5_ijn88")
+texture_scale = 0.3

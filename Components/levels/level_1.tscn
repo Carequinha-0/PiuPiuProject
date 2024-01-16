@@ -1,8 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfjwchq4062au"]
+[gd_scene load_steps=11 format=3 uid="uid://bfjwchq4062au"]
 
+[ext_resource type="Script" path="res://Components/levels/level_1.cs" id="1_7rhvu"]
 [ext_resource type="Texture2D" uid="uid://jr6621f2rk5f" path="res://Assets/Tilesets/dungeon_1_tileset.png" id="1_rwlgh"]
 [ext_resource type="PackedScene" uid="uid://reqh44ywme7u" path="res://player.tscn" id="2_6nf2g"]
 [ext_resource type="AudioStream" uid="uid://c6256qqvhnhui" path="res://Assets/Audio/Undertale - Megalovania.mp3" id="3_cgtmw"]
+[ext_resource type="Script" path="res://Components/Entities/Objects/Door.cs" id="4_08bmh"]
+[ext_resource type="FontFile" uid="uid://boq0u6gq5dnq8" path="res://Components/Fonte/PixelTakhisis-ZajJ.ttf" id="5_2dagi"]
+[ext_resource type="PackedScene" uid="uid://dxyj63227dq4i" path="res://Components/UI/BigTitle.tscn" id="7_mdkwp"]
+[ext_resource type="PackedScene" uid="uid://dw4wkrjf264wt" path="res://HUD.tscn" id="8_o0raa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lglbw"]
 texture = ExtResource("1_rwlgh")
@@ -571,6 +576,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lglbw")
 
 [node name="level_1" type="Node2D"]
+script = ExtResource("1_7rhvu")
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(1.445, 1.445)
@@ -584,4 +590,58 @@ layer_2/tile_data = PackedInt32Array(-589824, 458752, 0)
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_cgtmw")
+volume_db = -18.0
 autoplay = true
+
+[node name="Door" type="Marker2D" parent="."]
+position = Vector2(23, -386)
+script = ExtResource("4_08bmh")
+
+[node name="InteractionText" type="Label" parent="Door"]
+offset_left = -92.0
+offset_top = -57.0
+offset_right = 102.0
+offset_bottom = -34.0
+theme_override_fonts/font = ExtResource("5_2dagi")
+text = "Press E to open
+"
+
+[node name="BigTitle" parent="." instance=ExtResource("7_mdkwp")]
+scale = Vector2(2.22, 2.22)
+
+[node name="HUD" parent="." instance=ExtResource("8_o0raa")]
+
+[node name="SpawnLocation" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(96, 214)
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(-295, 4)
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(-294, -121)
+
+[node name="Marker2D4" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(216, 154)
+
+[node name="Marker2D5" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(275, 53)
+
+[node name="Marker2D6" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(-142, -205)
+
+[node name="Marker2D7" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(-261, 157)
+
+[node name="Marker2D8" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(144, -216)
+
+[node name="Marker2D9" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(274, -60)
+
+[node name="Marker2D10" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
+position = Vector2(-139, 200)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.505882, 0.505882, 0.505882, 1)

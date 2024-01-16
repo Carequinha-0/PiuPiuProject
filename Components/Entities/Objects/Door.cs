@@ -3,14 +3,13 @@ using System;
 
 public partial class Door : Interactable
 {
-	public double roundTimer = 10;
+	public double roundTimer = 60;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		this.player_node = GetNode<player>("../Player");
 		this.interaction_text = GetNode<Label>("./InteractionText");
 		this.range = 100;
-
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,15 +25,12 @@ public partial class Door : Interactable
 	{
 		Random rnd = new Random();
 		if (roundTimer <= 0) {
-			player_node.rondasPassadas += 1;
-			player_node.levelSpawnMultiplyer -= 0.25f;
-			roundTimer = 10;
-
-			if (player_node.rondasPassadas <= 15) {		
+			if (global_state.round < 14) {		
 				string[] levels = {"res://Components/levels/level_1.tscn", "res://Components/levels/level_2.tscn", "res://Components/levels/level_3.tscn"};
+				global_state.round += 1;
 				GetTree().ChangeSceneToFile(levels[rnd.Next(0,3)]);
 			} else {
-				GetTree().ChangeSceneToFile("");
+				GetTree().ChangeSceneToFile("res://Components/levels/level_boss.tscn");
 			}
 		}
 		return null;

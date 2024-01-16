@@ -24,13 +24,13 @@ public partial class Boss : CharacterBody2D
 	{
 		state_machine = new StateMachine(new BossGetAwayState(this));
 		animated_sprite = GetNode<AnimatedSprite2D>("./AnimatedSprite2D");
-		health = new Health(200, onDeath);
+		health = new Health(3000, onDeath);
 		Area2D hitbox = GetNode<Area2D>("./Hitbox");
 		damageReceiver = new DamageReceiver(ref health, ref hitbox, 0.1f);
 		this.healthBar = new HealthBarMob(ref health, GetNode<AnimatedSprite2D>("./HealthBar"));
 	}
 	public void onDeath() {
-		QueueFree();
+		GetTree().ChangeSceneToFile("res://Components/levels/victory_screen.tscn");
 	}
 	
 	public override void _PhysicsProcess(double delta)

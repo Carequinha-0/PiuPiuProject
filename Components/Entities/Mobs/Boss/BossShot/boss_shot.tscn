@@ -7,6 +7,7 @@
 size = Vector2(16, 4)
 
 [node name="Area2D" type="Area2D"]
+scale = Vector2(1.52, 2.56)
 script = ExtResource("1_pqxpc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

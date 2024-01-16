@@ -1,19 +1,89 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw4wkrjf264wt"]
+[gd_scene load_steps=17 format=3 uid="uid://dw4wkrjf264wt"]
 
 [ext_resource type="Script" path="res://Components/UI/HealthBar.cs" id="1_rcy2o"]
 [ext_resource type="FontFile" uid="uid://boq0u6gq5dnq8" path="res://Components/Fonte/PixelTakhisis-ZajJ.ttf" id="2_dtjoq"]
 [ext_resource type="Script" path="res://Components/UI/RoundTimer.cs" id="3_e3pus"]
+[ext_resource type="Script" path="res://Components/UI/Floor.cs" id="4_8cy3i"]
+[ext_resource type="Texture2D" uid="uid://oia6pxbyjtf7" path="res://Assets/Entities/MainCharacter/lifebar_player.png" id="5_nqk3c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5b5fm"]
+font = ExtResource("2_dtjoq")
+font_size = 36
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gk37u"]
+atlas = ExtResource("5_nqk3c")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rerdt"]
+atlas = ExtResource("5_nqk3c")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_675el"]
+atlas = ExtResource("5_nqk3c")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnjph"]
+atlas = ExtResource("5_nqk3c")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l131l"]
+atlas = ExtResource("5_nqk3c")
+region = Rect2(256, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi0ff"]
+atlas = ExtResource("5_nqk3c")
+region = Rect2(320, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ildrt"]
+atlas = ExtResource("5_nqk3c")
+region = Rect2(384, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ah4sf"]
+atlas = ExtResource("5_nqk3c")
+region = Rect2(448, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtrq6"]
+atlas = ExtResource("5_nqk3c")
+region = Rect2(512, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_476vs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gk37u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rerdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_675el")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnjph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l131l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fi0ff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ildrt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ah4sf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtrq6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="HUD" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
-offset_left = 57.0
-offset_top = 44.0
-offset_right = 295.0
-offset_bottom = 135.0
-script = ExtResource("1_rcy2o")
 
 [node name="RoundTimer" type="Label" parent="CanvasLayer"]
 offset_left = 716.0
@@ -25,3 +95,18 @@ theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_e3pus")
+
+[node name="Floor" type="Label" parent="CanvasLayer"]
+offset_left = 153.0
+offset_top = 132.0
+offset_right = 335.0
+offset_bottom = 179.0
+text = "Floor 0"
+label_settings = SubResource("LabelSettings_5b5fm")
+script = ExtResource("4_8cy3i")
+
+[node name="HealthBar" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(220, 98)
+scale = Vector2(5.7, 5.7)
+sprite_frames = SubResource("SpriteFrames_476vs")
+script = ExtResource("1_rcy2o")
