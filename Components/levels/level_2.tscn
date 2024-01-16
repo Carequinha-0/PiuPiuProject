@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://df3itgky24aii"]
+[gd_scene load_steps=10 format=3 uid="uid://df3itgky24aii"]
 
 [ext_resource type="Texture2D" uid="uid://jr6621f2rk5f" path="res://Assets/Tilesets/dungeon_1_tileset.png" id="1_cpa7l"]
 [ext_resource type="Script" path="res://Main.cs" id="1_nqnqu"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dw4wkrjf264wt" path="res://HUD.tscn" id="3_g21q7"]
 [ext_resource type="FontFile" uid="uid://boq0u6gq5dnq8" path="res://Components/Fonte/PixelTakhisis-ZajJ.ttf" id="4_cod2t"]
 [ext_resource type="Script" path="res://Components/Entities/Objects/Door.cs" id="5_bv5wu"]
+[ext_resource type="AudioStream" uid="uid://sa56p6xrfps" path="res://Assets/Audio/Undertale OST_ 068 - Death by Glamour.mp3" id="7_iv2j6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1lfk8"]
 texture = ExtResource("1_cpa7l")
@@ -633,3 +634,7 @@ offset_bottom = -34.0
 theme_override_fonts/font = ExtResource("4_cod2t")
 text = "Press E to open
 "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_iv2j6")
+autoplay = true

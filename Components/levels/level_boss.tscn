@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cl2iqg00bobhx"]
+[gd_scene load_steps=7 format=3 uid="uid://cl2iqg00bobhx"]
 
 [ext_resource type="Texture2D" uid="uid://jr6621f2rk5f" path="res://Assets/Tilesets/dungeon_1_tileset.png" id="1_wg718"]
 [ext_resource type="PackedScene" uid="uid://d4j51hy41cpjv" path="res://Components/Entities/Player/player.tscn" id="2_n1qbg"]
 [ext_resource type="PackedScene" uid="uid://ccscm6lgcdwj" path="res://Components/Entities/Objects/Torch/Torch.tscn" id="3_woiqt"]
+[ext_resource type="AudioStream" uid="uid://bfer0vmmlkw1v" path="res://Assets/Audio/Can You Hear The Music.mp3" id="4_caeh5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jq8x8"]
 texture = ExtResource("1_wg718")
@@ -588,3 +589,7 @@ position = Vector2(-468, -156)
 
 [node name="Torch2" parent="." instance=ExtResource("3_woiqt")]
 position = Vector2(469, -152)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_caeh5")
+autoplay = true

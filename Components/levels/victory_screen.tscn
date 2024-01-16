@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd7bkuvaorup3"]
+
+[ext_resource type="Texture2D" uid="uid://dna8awc61d42s" path="res://Assets/Images/parques_de_sintra_castelo_dos_mouros.webp" id="1_jxg7e"]
+[ext_resource type="AudioStream" uid="uid://c3xmbavnuekft" path="res://Assets/Audio/Ludovico Einaudi - Experience (Official Visualizer).mp3" id="2_of2nc"]
+
+[node name="Victory_screen" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -962.0
+offset_top = -539.0
+offset_right = 977.0
+offset_bottom = 548.0
+texture = ExtResource("1_jxg7e")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_of2nc")
+autoplay = true
