@@ -1,15 +1,15 @@
 using Godot;
 using System;
 
-public partial class NormalShot : DamageSource
+public partial class ShootingMobBullet : DamageSource
 {
 	public Vector2 direction;
 	public int velocity;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		this.damage = 20;
-		this.velocity = 10;
+		this.damage = 10;
+		this.velocity = 2;
 		var anim_player = this.GetNode<AnimationPlayer>("./AnimationPlayer");
 		anim_player.CurrentAnimation = "default";
 	}
