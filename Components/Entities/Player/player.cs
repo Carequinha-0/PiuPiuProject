@@ -14,8 +14,8 @@ public partial class player : CharacterBody2D
 	public float dashCurrentCooldown = 0;
 	public float normalShotCooldown = 0.1f;
 	public float normalShotCurrentCooldown = 0;
-
-
+	public float levelSpawnMultiplyer = 6;
+	public int rondasPassadas = 0;
 	public override void _Ready()
 	{
 		this.health = new Health(100, OnDeath);

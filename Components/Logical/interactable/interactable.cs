@@ -7,7 +7,7 @@ public abstract partial class Interactable : Node2D  {
 	public Label interaction_text;
 	public player player_node;
     public abstract Action OnActivate();
-    public abstract void ActionLoop();
+    public abstract void ActionLoop(double delta);
 
     public Action ToggleVisibilityOnRange() {
         interaction_text.Visible = false;
@@ -26,6 +26,6 @@ public abstract partial class Interactable : Node2D  {
 		if(IsOnRange() && Input.IsActionJustPressed("interact")){
             this.OnActivate();
         }
-        ActionLoop();
+        ActionLoop(delta);
 	}
 }

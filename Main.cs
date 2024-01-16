@@ -5,10 +5,11 @@ public partial class Main : Node2D
 {
 	public Node2D SpawnArea;
 	public double spawnCooldown;
+	public player player_node;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		
+		this.player_node = GetNode<player>("./Player");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,7 +19,7 @@ public partial class Main : Node2D
 		if(Input.IsActionJustPressed("Esc")) {
 			GetTree().ChangeSceneToFile("res://MainMenu.tscn");
 		}
-		if (spawnCooldown >= 7) {
+		if (spawnCooldown >= player_node.levelSpawnMultiplyer) {
 			Random rnd = new Random();
 
 			var shooting_mob = GD.Load<PackedScene>("res://shootingMob.tscn");

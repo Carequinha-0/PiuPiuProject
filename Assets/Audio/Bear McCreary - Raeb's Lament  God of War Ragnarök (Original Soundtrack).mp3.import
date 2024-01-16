@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d2mly388vi8nt"
+path="res://.godot/imported/Bear McCreary - Raeb's Lament  God of War Ragnarök (Original Soundtrack).mp3-17ab277e61bc1506c4d0002a40cd6e11.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Bear McCreary - Raeb's Lament  God of War Ragnarök (Original Soundtrack).mp3"
+dest_files=["res://.godot/imported/Bear McCreary - Raeb's Lament  God of War Ragnarök (Original Soundtrack).mp3-17ab277e61bc1506c4d0002a40cd6e11.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

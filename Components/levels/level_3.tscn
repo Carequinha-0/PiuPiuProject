@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c13umuxo7tayg"]
+[gd_scene load_steps=10 format=3 uid="uid://c13umuxo7tayg"]
 
 [ext_resource type="Texture2D" uid="uid://jr6621f2rk5f" path="res://Assets/Tilesets/dungeon_1_tileset.png" id="1_kmp3u"]
 [ext_resource type="Script" path="res://Main.cs" id="1_yluc1"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://boq0u6gq5dnq8" path="res://Components/Fonte/PixelTakhisis-ZajJ.ttf" id="3_aeset"]
 [ext_resource type="PackedScene" uid="uid://dw4wkrjf264wt" path="res://HUD.tscn" id="4_gusbr"]
 [ext_resource type="Script" path="res://Components/Entities/Objects/Door.cs" id="4_ldj3w"]
+[ext_resource type="AudioStream" uid="uid://c6256qqvhnhui" path="res://Assets/Audio/Undertale - Megalovania.mp3" id="7_ymfa0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lfv7h"]
 texture = ExtResource("1_kmp3u")
@@ -587,11 +588,11 @@ layer_2/tile_data = PackedInt32Array(-262144, 458752, 0)
 [node name="Player" parent="." instance=ExtResource("3_11xg0")]
 position = Vector2(3, 89)
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="Door" type="Marker2D" parent="."]
 position = Vector2(21, -155)
 script = ExtResource("4_ldj3w")
 
-[node name="InteractionText" type="Label" parent="Marker2D"]
+[node name="InteractionText" type="Label" parent="Door"]
 offset_left = -94.0
 offset_top = -56.0
 offset_right = 100.0
@@ -632,3 +633,7 @@ position = Vector2(337, -102)
 
 [node name="Marker2D10" type="Marker2D" parent="SpawnLocation" groups=["Markers"]]
 position = Vector2(-177, 326)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ymfa0")
+autoplay = true
