@@ -587,11 +587,11 @@ layer_2/tile_data = PackedInt32Array(-262144, 458752, 0)
 [node name="Player" parent="." instance=ExtResource("3_11xg0")]
 position = Vector2(3, 89)
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="Door" type="Marker2D" parent="."]
 position = Vector2(21, -155)
 script = ExtResource("4_ldj3w")
 
-[node name="InteractionText" type="Label" parent="Marker2D"]
+[node name="InteractionText" type="Label" parent="Door"]
 offset_left = -94.0
 offset_top = -56.0
 offset_right = 100.0

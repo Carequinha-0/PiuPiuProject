@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw4wkrjf264wt"]
+[gd_scene load_steps=4 format=3 uid="uid://dw4wkrjf264wt"]
 
 [ext_resource type="Script" path="res://Components/UI/HealthBar.cs" id="1_rcy2o"]
+[ext_resource type="FontFile" uid="uid://boq0u6gq5dnq8" path="res://Components/Fonte/PixelTakhisis-ZajJ.ttf" id="2_dtjoq"]
+[ext_resource type="Script" path="res://Components/UI/RoundTimer.cs" id="3_e3pus"]
 
 [node name="HUD" type="Node2D"]
 
@@ -9,6 +11,17 @@
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
 offset_left = 57.0
 offset_top = 44.0
-offset_right = 184.0
-offset_bottom = 71.0
+offset_right = 295.0
+offset_bottom = 135.0
 script = ExtResource("1_rcy2o")
+
+[node name="RoundTimer" type="Label" parent="CanvasLayer"]
+offset_left = 716.0
+offset_top = 59.0
+offset_right = 1225.0
+offset_bottom = 213.0
+theme_override_fonts/font = ExtResource("2_dtjoq")
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_e3pus")
