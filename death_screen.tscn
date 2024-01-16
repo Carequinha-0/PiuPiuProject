@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://hogylbid5lb2"]
+[gd_scene load_steps=4 format=3 uid="uid://xeby5arvmvuj"]
 
 [ext_resource type="FontFile" uid="uid://boq0u6gq5dnq8" path="res://Components/Fonte/PixelTakhisis-ZajJ.ttf" id="1_pr2op"]
 [ext_resource type="Script" path="res://deathScreen.cs" id="1_x7ql1"]
+[ext_resource type="AudioStream" uid="uid://d2mly388vi8nt" path="res://Assets/Audio/Bear McCreary - Raeb's Lament  God of War Ragnarök (Original Soundtrack).mp3" id="3_n0a7i"]
 
 [node name="DeathScreen" type="Node2D"]
 script = ExtResource("1_x7ql1")
@@ -37,6 +38,10 @@ text = "Quit
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(575, 324)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_n0a7i")
+autoplay = true
 
 [connection signal="pressed" from="RestartGame" to="." method="_on_restart_game_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
